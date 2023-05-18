@@ -5,7 +5,10 @@
 
 int main()
 {
-    Logger::Info("Hey");
+    using namespace std::chrono_literals;
+    Logger::OpenDefaultFile();
+    Logger::LogInfo("Test");
+    Logger::Stop();
 
     return 0;
 }

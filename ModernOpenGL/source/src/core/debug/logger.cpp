@@ -4,94 +4,140 @@
 
 #include <windows.h>
 
-#define ANSI_BEGIN          "\x1b["
-#define ANSI_SEPARATOR      ";"
+#define ANSI_COLOR_YELLOW   "\x1b[33m"
+#define ANSI_COLOR_RED      "\x1b[31m"
 
-#define ANSI_COLOR_GREEN    "32m"
-#define ANSI_COLOR_YELLOW   "33m"
-#define ANSI_COLOR_RED      "31m"
+#define ANSI_STYLE_BOLD     "\x1b[1m"
 
-#define ANSI_STYLE_BOLD     "1m"
+#define ANSI_RESET          "\x1b[0m"
 
-#define ANSI_RESET          "0m"
-
+TsQueue<Logger::LogEntry> Logger::mLines;
 std::ofstream Logger::mFile;
-TsQueue<std::pair<std::string, Logger::LogLevel>> Logger::mLines;
-std::condition_variable Logger::mCv;
-Logger Logger::mInstance;
+std::condition_variable Logger::mCondVar;
+bool Logger::mRunning = true;
 
-std::thread thread;
+std::thread Logger::thread = std::thread(&Logger::Run);
 std::mutex mutex;
+bool synchronizing = false;
 
 void Logger::OpenFile(const std::filesystem::path &filename)
 {
     CloseFile();
-    mFile.open(filename, std::ios_base::out | std::ios_base::app | std::ios_base::noreplace);
+    mFile.open(filename, std::ios_base::out | std::ios_base::app);
+
+    if (!mFile.good())
+        LogWarningToVS("Could not open log file for writing: " + std::filesystem::absolute(filename).string());
+}
+
+void Logger::OpenDefaultFile()
+{
+    // Get the current date and format it in yyyy-mm-dd for the file name
+    const std::time_t t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    std::tm ltime;
+    localtime_s(&ltime, &t);
+    const std::_Timeobj<char, const tm *> timeFormatter = std::put_time(&ltime, "%F.log");
+    const std::string date = (std::ostringstream() << timeFormatter).str();
+    OpenFile("logs/" + date);
 }
 
 void Logger::CloseFile()
 {
     if (mFile.is_open())
+    {
+        mFile << std::endl;
         mFile.close();
+    }
 }
 
-Logger::Logger()
+void Logger::Synchronize()
 {
-    thread = std::thread(&Logger::Run, this);
+    if (!mLines.Empty())
+    {
+        synchronizing = true;
+        mCondVar.notify_one();
+        std::unique_lock<std::mutex> lock(mutex);
+        mCondVar.wait(lock, [] { return !synchronizing; });
+    }
 }
 
-Logger::~Logger()
+void Logger::Stop()
 {
+    Logger::Synchronize();
     mRunning = false;
+    mCondVar.notify_one();
     if (thread.joinable())
         thread.join();
 }
 
 void Logger::Run()
 {
+    // Set thread name for easier debugging
+    SetThreadDescription(thread.native_handle(), L"Logger Thread");
     std::unique_lock<std::mutex> lock(mutex);
     while (mRunning)
     {
+        mCondVar.wait(lock, [] { return !mLines.Empty() || !mRunning || synchronizing; });
+
         while (!mLines.Empty())
             Log(mLines.Pop());
-        mCv.wait(lock, [this] { return !mLines.Empty(); });
+
+        // As we don't use std::endl for newlines, make sure to flush the streams before going to sleep
+        std::cout.flush();
+        if (mFile.is_open())
+            mFile.flush();
+
+        if (synchronizing)
+        {
+            synchronizing = false;
+            mCondVar.notify_one();
+        }
     }
+    CloseFile();
 }
 
 void Logger::Log(const LogEntry& entry)
 {
-    const std::string& baseText = entry.first;
-    LogLevel level = entry.second;
-    const bool vsOutput = (int) level & VS_OUTPUT_LOG_BIT;
+    // Get the message time and format it in [hh:mm:ss]
+    const std::time_t t = std::chrono::system_clock::to_time_t(entry.time);
+    std::tm ltime;
+    localtime_s(&ltime, &t);
+    const std::_Timeobj<char, const tm *> timeFormatter = std::put_time(&ltime, "[%H:%M:%S] ");
+    const std::string time = (std::ostringstream() << timeFormatter).str();
 
-    if (vsOutput)
+    // Setup the base text message
+    const std::string& baseMessage = entry.message + '\n', coloredBaseMessage = time + baseMessage;
+    LogLevel level = entry.level;
+    
+    const bool outputToVS = (int) level & VS_OUTPUT_LOG_BIT;
+    if (outputToVS)
         level = LOG_LEVEL_BINARY_OP(level, ~VS_OUTPUT_LOG_BIT, &);
 
-    if (mFile.is_open())
-        mFile << baseText;
-
-    std::string text;
+    std::string coloredMessage, uncoloredMessage;
     switch (level)
     {
-        case LogLevel::Debug:
-            text = ANSI_BEGIN ANSI_COLOR_GREEN + baseText;
-            break;
         case LogLevel::Info:
-            text = ANSI_BEGIN ANSI_RESET + baseText;
+            coloredMessage = coloredBaseMessage;
+            uncoloredMessage = time + "[INFO] " + baseMessage;
             break;
         case LogLevel::Warning:
-            text = ANSI_BEGIN ANSI_COLOR_YELLOW + baseText;
+            coloredMessage = ANSI_COLOR_YELLOW + coloredBaseMessage + ANSI_RESET;
+            uncoloredMessage = time + "[WARN] " + baseMessage;
             break;
         case LogLevel::Error:
-            text = ANSI_BEGIN ANSI_COLOR_RED + baseText;
+            coloredMessage = ANSI_COLOR_RED + coloredBaseMessage + ANSI_RESET;
+            uncoloredMessage = time + "[ERROR] " + baseMessage;
             break;
         case LogLevel::Fatal:
-            text = ANSI_BEGIN ANSI_COLOR_RED ANSI_SEPARATOR ANSI_STYLE_BOLD + baseText;
+            coloredMessage = ANSI_STYLE_BOLD ANSI_COLOR_RED + coloredBaseMessage + ANSI_RESET;
+            uncoloredMessage = time + "[FATAL] " + baseMessage;
             break;
     }
 
-    std::cout << text;
+    std::cout << coloredMessage;
 
-    if (vsOutput)
-        OutputDebugStringA(text.c_str());
+    if (mFile.is_open())
+        mFile << uncoloredMessage;
+
+    if (outputToVS)
+        OutputDebugStringA(uncoloredMessage.c_str());
 }
