@@ -40,15 +40,7 @@ public:
         return mResources.contains(name) ? dynamic_cast<T*>(mResources[name]) : nullptr;
     }
     
-    static void Unload(const std::string& name)
-    {
-        auto&& it = mResources.find(name);
-        if (it == mResources.end())
-            return;
-
-        delete it->second;
-        mResources.erase(it);
-    }
+    static void Unload(const std::string& name);
 
 private:
     // As we don't care about the map to be sorted, std::unordered_map is used instead

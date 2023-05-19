@@ -158,17 +158,24 @@
     <ClCompile Include="externals\src\ImGui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="externals\src\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="externals\src\stb_image.cpp" />
-    <ClCompile Include="source\src\core\resources\texture.cpp" />
+    <ClCompile Include="source\src\core\application.cpp" />
+    <ClCompile Include="source\src\resources\model.cpp" />
+    <ClCompile Include="source\src\resources\shader.cpp" />
+    <ClCompile Include="source\src\resources\texture.cpp" />
     <ClCompile Include="source\src\core\debug\logger.cpp" />
-    <ClCompile Include="source\src\core\resources\resource_manager.cpp" />
+    <ClCompile Include="source\src\resources\resource_manager.cpp" />
     <ClCompile Include="source\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\include\core\application.hpp" />
+    <ClInclude Include="source\include\core\data_structure\vertex.hpp" />
+    <ClInclude Include="source\include\resources\model.hpp" />
     <ClInclude Include="source\include\core\data_structure\tsqueue.hpp" />
     <ClInclude Include="source\include\core\debug\assertion.hpp" />
     <ClInclude Include="source\include\core\debug\logger.hpp" />
     <ClInclude Include="source\include\resources\resource.hpp" />
     <ClInclude Include="source\include\resources\resource_manager.hpp" />
+    <ClInclude Include="source\include\resources\shader.hpp" />
     <ClInclude Include="source\include\resources\texture.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

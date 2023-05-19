@@ -397,7 +397,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-!ModernOpenGL/source/include/core
-!ModernOpenGL/source/src/core
-!ModernOpenGL/logs
 !ModernOpenGL/logs/*.log
+!ModernOpenGL/assets/**
