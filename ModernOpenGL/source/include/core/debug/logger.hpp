@@ -16,6 +16,9 @@
 class Logger
 {
 public:
+    // You cannot instantiate this class
+    Logger() = delete;
+
     enum class LogLevel : unsigned char
     {
         Info,
@@ -48,6 +51,7 @@ public:
         mLines.Push(LogEntry(Format(format, std::forward<Args>(args)...), LogLevel::Fatal));
         mCondVar.notify_one();
     }
+    
     template<class... Args>
     static void LogInfoToVS(const std::string& format, Args&&... args)
     {
@@ -99,7 +103,6 @@ private:
     static std::ofstream mFile;
     static std::condition_variable mCondVar;
     static std::thread thread;
-    static bool mRunning;
 
     static void Run();
     static void Log(const LogEntry& entry);

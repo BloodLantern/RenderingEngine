@@ -14,11 +14,11 @@
 TsQueue<Logger::LogEntry> Logger::mLines;
 std::ofstream Logger::mFile;
 std::condition_variable Logger::mCondVar;
-bool Logger::mRunning = true;
 
 std::thread Logger::thread = std::thread(&Logger::Run);
 std::mutex mutex;
 bool synchronizing = false;
+bool running;
 
 void Logger::OpenFile(const std::filesystem::path &filename)
 {
@@ -63,7 +63,7 @@ void Logger::Synchronize()
 void Logger::Stop()
 {
     Logger::Synchronize();
-    mRunning = false;
+    running = false;
     mCondVar.notify_one();
     if (thread.joinable())
         thread.join();
@@ -74,9 +74,9 @@ void Logger::Run()
     // Set thread name for easier debugging
     SetThreadDescription(thread.native_handle(), L"Logger Thread");
     std::unique_lock<std::mutex> lock(mutex);
-    while (mRunning)
+    while (running)
     {
-        mCondVar.wait(lock, [] { return !mLines.Empty() || !mRunning || synchronizing; });
+        mCondVar.wait(lock, [] { return !mLines.Empty() || !running || synchronizing; });
 
         while (!mLines.Empty())
             Log(mLines.Pop());
