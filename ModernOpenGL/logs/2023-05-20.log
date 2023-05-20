@@ -107,3 +107,234 @@
 [15:07:17] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
 [15:07:17] [INFO] Linking shader program...
 [15:07:21] [INFO] Shutting down application...
+
+[15:21:25] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:21:25] [INFO] Application successfully initialized
+[15:21:25] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:21:25] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:21:25] [INFO] Linking shader program...
+
+[15:29:26] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:29:27] [INFO] Application successfully initialized
+[15:29:27] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:29:27] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:29:27] [INFO] Linking shader program...
+
+[15:30:54] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:30:54] [INFO] Application successfully initialized
+[15:30:54] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:30:54] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:30:54] [INFO] Linking shader program...
+
+[15:32:11] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:32:12] [INFO] Application successfully initialized
+[15:32:13] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:32:13] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:32:13] [INFO] Linking shader program...
+
+[15:36:46] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:36:46] [INFO] Application successfully initialized
+[15:36:46] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:36:46] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:36:46] [INFO] Linking shader program...
+
+[15:37:49] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:37:49] [INFO] Application successfully initialized
+[15:37:49] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:37:49] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:37:49] [INFO] Linking shader program...
+
+[15:38:29] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:38:29] [INFO] Application successfully initialized
+[15:38:29] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:38:29] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:38:29] [INFO] Linking shader program...
+
+[15:39:33] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:39:33] [INFO] Application successfully initialized
+[15:39:33] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:39:33] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:39:33] [INFO] Linking shader program...
+[15:39:33] [ERROR] OpenGL error: 1282
+
+[15:40:23] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:40:23] [INFO] Application successfully initialized
+[15:40:23] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:40:23] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:40:23] [INFO] Linking shader program...
+
+[15:40:55] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:40:56] [INFO] Application successfully initialized
+[15:40:56] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:40:56] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:40:56] [INFO] Linking shader program...
+[15:40:56] [ERROR] OpenGL error: 1282
+[15:40:56] [ERROR] OpenGL error: 0
+
+[15:42:00] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:42:01] [INFO] Application successfully initialized
+[15:42:01] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:42:01] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:42:01] [INFO] Linking shader program...
+[15:42:01] [ERROR] OpenGL error: 1282
+[15:42:01] [ERROR] OpenGL error: 0
+
+[15:42:26] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:42:27] [INFO] Application successfully initialized
+[15:42:27] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:42:27] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:42:27] [INFO] Linking shader program...
+[15:42:27] [ERROR] OpenGL error: 0
+[15:42:27] [ERROR] OpenGL error: 1282
+
+[15:43:08] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:43:08] [INFO] Application successfully initialized
+[15:43:08] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+
+[15:44:51] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:44:51] [INFO] Application successfully initialized
+[15:44:51] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:44:51] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:44:51] [INFO] Linking shader program...
+[15:44:51] [ERROR] OpenGL error: 0
+[15:44:51] [ERROR] OpenGL error: 1282
+
+[15:45:59] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:45:59] [INFO] Application successfully initialized
+[15:45:59] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:45:59] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:45:59] [INFO] Linking shader program...
+[15:45:59] [ERROR] OpenGL error: 0
+[15:45:59] [ERROR] OpenGL error: 1282
+
+[15:46:25] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:46:25] [INFO] Application successfully initialized
+[15:46:25] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:46:25] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:46:25] [INFO] Linking shader program...
+[15:46:25] [ERROR] OpenGL error: 0
+[15:46:25] [ERROR] OpenGL error: 1282
+
+[15:47:22] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:47:22] [INFO] Application successfully initialized
+[15:47:22] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:47:22] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:47:22] [INFO] Linking shader program...
+[15:47:22] [ERROR] OpenGL error: 0
+
+[15:47:37] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:47:38] [INFO] Application successfully initialized
+[15:47:38] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:47:38] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:47:38] [INFO] Linking shader program...
+[15:47:38] [ERROR] OpenGL error: 0
+
+[15:48:01] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:48:01] [INFO] Application successfully initialized
+[15:48:01] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:48:01] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:48:01] [INFO] Linking shader program...
+[15:48:01] [ERROR] OpenGL error: 0
+[15:48:01] [ERROR] OpenGL error: 1282
+[15:48:01] [ERROR] OpenGL error: 0
+[15:48:01] [ERROR] OpenGL error: 0
+[15:48:01] [ERROR] OpenGL error: 0
+
+[15:48:33] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:48:33] [INFO] Application successfully initialized
+[15:48:33] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:48:33] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:48:33] [INFO] Linking shader program...
+[15:48:33] [ERROR] OpenGL error: 1282
+
+[15:51:09] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:51:09] [INFO] Application successfully initialized
+[15:51:09] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:51:09] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:51:09] [INFO] Linking shader program...
+[15:51:09] [ERROR] OpenGL error: 0
+[15:51:09] [ERROR] OpenGL error: 1282
+
+[15:51:27] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:51:28] [INFO] Application successfully initialized
+[15:51:28] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:51:28] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:51:28] [INFO] Linking shader program...
+[15:51:28] [ERROR] OpenGL error: 0
+[15:51:28] [ERROR] OpenGL error: 0
+[15:51:28] [ERROR] OpenGL error: 1282
+[15:51:28] [ERROR] OpenGL error: 0
+[15:51:28] [ERROR] OpenGL error: 1282
+[15:51:28] [ERROR] OpenGL error: 0
+
+[15:53:57] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:53:58] [INFO] Application successfully initialized
+[15:53:58] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:53:58] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:53:58] [INFO] Linking shader program...
+[15:53:58] [INFO] source\src\resources\model.cpp(107): OpenGL error: 131
+[15:53:58] [INFO] source\src\resources\model.cpp(109): OpenGL error: 131
+[15:53:58] [INFO] source\src\resources\model.cpp(111): OpenGL error: 131
+[15:53:58] [INFO] source\src\resources\model.cpp(113): OpenGL error: 131
+[15:53:58] [INFO] source\src\resources\model.cpp(115): OpenGL error: 131
+[15:53:58] [INFO] source\src\resources\model.cpp(117): OpenGL error: 131
+
+[15:54:42] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:54:42] [INFO] Application successfully initialized
+[15:54:42] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:54:42] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:54:42] [INFO] Linking shader program...
+[15:54:42] [INFO] source\src\resources\model.cpp(105): OpenGL error: 131
+[15:54:42] [INFO] source\src\resources\model.cpp(108): OpenGL error: 131
+[15:54:42] [INFO] source\src\resources\model.cpp(110): OpenGL error: 131
+[15:54:42] [INFO] source\src\resources\model.cpp(112): OpenGL error: 131
+[15:54:42] [INFO] source\src\resources\model.cpp(114): OpenGL error: 131
+[15:54:42] [INFO] source\src\resources\model.cpp(116): OpenGL error: 131
+[15:54:42] [INFO] source\src\resources\model.cpp(118): OpenGL error: 131
+[15:54:42] [INFO] source\src\resources\model.cpp(122): OpenGL error: 131
+
+[15:55:48] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:55:49] [INFO] Application successfully initialized
+[15:55:49] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:55:49] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:55:49] [INFO] Linking shader program...
+[15:55:49] [INFO] source\src\resources\model.cpp(105): OpenGL error: 0
+[15:55:49] [INFO] source\src\resources\model.cpp(108): OpenGL error: 0
+[15:55:49] [INFO] source\src\resources\model.cpp(110): OpenGL error: 0
+[15:55:49] [INFO] source\src\resources\model.cpp(112): OpenGL error: 1282
+[15:55:49] [INFO] source\src\resources\model.cpp(114): OpenGL error: 0
+[15:55:49] [INFO] source\src\resources\model.cpp(116): OpenGL error: 1282
+[15:55:49] [INFO] source\src\resources\model.cpp(118): OpenGL error: 0
+[15:55:49] [INFO] source\src\resources\model.cpp(122): OpenGL error: 0
+
+[15:57:26] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:57:26] [INFO] Application successfully initialized
+[15:57:26] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:57:26] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:57:26] [INFO] Linking shader program...
+[15:57:26] [INFO] source\src\resources\model.cpp(111): OpenGL error: 0
+[15:57:26] [INFO] source\src\resources\model.cpp(113): OpenGL error: 0
+[15:57:26] [INFO] source\src\resources\model.cpp(115): OpenGL error: 1282
+[15:57:26] [INFO] source\src\resources\model.cpp(117): OpenGL error: 0
+[15:57:26] [INFO] source\src\resources\model.cpp(119): OpenGL error: 1282
+[15:57:26] [INFO] source\src\resources\model.cpp(121): OpenGL error: 0
+
+[15:58:21] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:58:22] [INFO] Application successfully initialized
+[15:58:22] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:58:22] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:58:22] [INFO] Linking shader program...
+[15:58:22] [INFO] source\src\resources\model.cpp(119): OpenGL error: 0
+[15:58:22] [INFO] source\src\resources\model.cpp(121): OpenGL error: 0
+[15:58:22] [INFO] source\src\resources\model.cpp(123): OpenGL error: 0
+[15:58:22] [INFO] source\src\resources\model.cpp(125): OpenGL error: 0
+[15:58:22] [INFO] source\src\resources\model.cpp(127): OpenGL error: 0
+[15:58:22] [INFO] source\src\resources\model.cpp(129): OpenGL error: 0
+[15:59:35] [INFO] Shutting down application...
+
+[16:02:59] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[16:02:59] [INFO] Application successfully initialized
+[16:02:59] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[16:02:59] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[16:02:59] [INFO] Linking shader program...
+[16:03:01] [INFO] Shutting down application...

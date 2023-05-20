@@ -63,15 +63,13 @@ void Model::Load(const std::filesystem::path& filepath)
             &modelIndices[2][0], &modelIndices[2][1], &modelIndices[2][2]
         );
 
-        mVertices.push_back(Vertex(positions[modelIndices[0][0] - 1], normals[modelIndices[0][1] - 1], uvs[modelIndices[0][2] - 1]));
-        mVertices.push_back(Vertex(positions[modelIndices[1][0] - 1], normals[modelIndices[1][1] - 1], uvs[modelIndices[1][2] - 1]));
-        mVertices.push_back(Vertex(positions[modelIndices[2][0] - 1], normals[modelIndices[2][1] - 1], uvs[modelIndices[2][2] - 1]));
+        mVertices.push_back(Vertex(positions[modelIndices[0][0] - 1], uvs[modelIndices[0][1] - 1], normals[modelIndices[0][2] - 1]));
+        mVertices.push_back(Vertex(positions[modelIndices[1][0] - 1], uvs[modelIndices[1][1] - 1], normals[modelIndices[1][2] - 1]));
+        mVertices.push_back(Vertex(positions[modelIndices[2][0] - 1], uvs[modelIndices[2][1] - 1], normals[modelIndices[2][2] - 1]));
 
         for (unsigned int i = 0; i < 9; i++)
             mIndices.push_back(modelIndices[i / 3][i % 3]);
     }
-
-    Link();
 }
 
 void Model::Unload()
@@ -89,24 +87,25 @@ void Model::Unload()
     }
 }
 
+void Model::Draw()
+{
+    glBindVertexArray(mVAO);
+    Logger::Synchronize();
+    glDrawArrays(GL_TRIANGLES, 0, (int) mVertices.size());
+}
+
 bool Model::Link()
 {
     if (mLinked)
         return false;
 
-    // Setup the VAO
+    // Generate the VAO
     glGenVertexArrays(1, &mVAO);
-    glBindVertexArray(mVAO);
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(Vertex), 0);
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*) sizeof(Vector3));
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(0, 2, GL_FLOAT, false, sizeof(Vertex), (void*) (2 * sizeof(Vector3)));
-
     // Generate the necessary buffers and set VBO and EBO ids
     glGenBuffers(2, &mVBO);
+
+    // Setup the VAO
+    glBindVertexArray(mVAO);
 
     // Setup the vertex buffer
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
@@ -115,6 +114,13 @@ bool Model::Link()
     // Setup the index buffer
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mEBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndices.size() * sizeof(unsigned int), mIndices.data(), GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*) 0);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 2, GL_FLOAT, false, sizeof(Vertex), (void*) sizeof(Vector3));
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(2, 3, GL_FLOAT, false, sizeof(Vertex), (void*) (sizeof(Vector3) + sizeof(Vector2)));
+    glEnableVertexAttribArray(2);
 
     // Unbind the VAO
     glBindVertexArray(0);

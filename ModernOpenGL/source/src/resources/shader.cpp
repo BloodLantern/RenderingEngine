@@ -74,7 +74,7 @@ void Shader::Load(const std::filesystem::path &filepath)
         return;
     }
 
-    mSource = std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>()).c_str();
+    mSource = std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
     mLoaded = true;
 }
 

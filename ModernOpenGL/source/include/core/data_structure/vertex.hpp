@@ -7,11 +7,11 @@
 struct Vertex
 {
     Vector3 Position;
+    Vector2 UV;
     Vector3 Normal;
-    Vector2 TextureUV;
     //Vector4 Color;
 
     Vertex() = default;
-    Vertex(const Vector3& position, const Vector3& normal, const Vector2& textureUV)
-        : Position(position), Normal(normal), TextureUV(textureUV) {}
+    Vertex(const Vector3& position, const Vector2& uv, const Vector3& normal)
+        : Position(position), UV(uv), Normal(normal) {}
 };

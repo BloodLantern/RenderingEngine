@@ -8,11 +8,14 @@
 class Model : public Resource
 {
 public:
-    Model(const std::string& filepath) : Resource(filepath) {}
+    Model() {}
+    Model(const std::filesystem::path& filepath) : Resource(filepath) { Load(filepath); Link(); }
     virtual ~Model() { Unload(); }
 
 	void Load(const std::filesystem::path& filepath) override;
 	void Unload() override;
+
+    void Draw();
 
 private:
     std::vector<Vertex> mVertices;

@@ -10,7 +10,7 @@
 
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
-#define DEBUG_LOG(str) Logger::LogInfoToVS(std::filesystem::relative(__FILE__).string() + "(" TOSTRING(__LINE__) "): " str)
+#define DEBUG_LOG(str, args) Logger::LogInfoToVS(std::filesystem::relative(__FILE__).string() + "(" TOSTRING(__LINE__) "): " str, args)
 #define LOG_LEVEL_BINARY_OP(left, right, operator) (static_cast<Logger::LogLevel>(static_cast<unsigned char>(left) operator right))
 
 class Logger

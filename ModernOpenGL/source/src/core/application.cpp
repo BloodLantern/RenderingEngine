@@ -2,12 +2,16 @@
 
 #include "core/debug/logger.hpp"
 #include "resources/shader.hpp"
+#include "resources/model.hpp"
 #include "resources/resource_manager.hpp"
 
 Application::Application()
 {
     Logger::OpenDefaultFile();
 }
+
+Shader* shader;
+Model* model;
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
 {
@@ -44,9 +48,19 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
 	glfwShowWindow(mWindow);
 
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+
+    // Enable depth test
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+
+    // Enable transparency
+    //glEnable(GL_BLEND);
+
     Logger::LogInfo("Application successfully initialized");
 
-    ResourceManager::Load<Shader>("source\\shaders");
+    shader = ResourceManager::Load<Shader>("source\\shaders");
+    model = ResourceManager::Load<Model>("assets\\meshes\\viking_room.obj");
 
     return true;
 }
@@ -55,8 +69,13 @@ void Application::MainLoop()
 {
     while (!glfwWindowShouldClose(mWindow))
     {
-        glfwSwapBuffers(mWindow);
         glfwPollEvents();
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        shader->Use();
+        model->Draw();
+
+        glfwSwapBuffers(mWindow);
     }
 }
 

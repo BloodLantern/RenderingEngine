@@ -24,6 +24,8 @@ public:
     bool LoadFragment(const std::filesystem::path& filepath);
     bool Link() override;
 
+    void Use() const { glUseProgram(mProgram); }
+
 private:
     unsigned int mVertex = 0, mFragment = 0, mProgram = 0;
     std::string mSource;
