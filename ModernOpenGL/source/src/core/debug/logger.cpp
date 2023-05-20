@@ -26,15 +26,37 @@ void Logger::OpenFile(const std::filesystem::path &filename)
     const bool exists = std::filesystem::exists(filename);
     mFile.open(filename, std::ios_base::out | std::ios_base::app);
 
-    if (!mFile.good())
+    if (!mFile.is_open() || !mFile.good())
     {
         LogWarning("Could not open log file for writing: " + std::filesystem::absolute(filename).string());
         return;
     }
 
+    LogInfo("Logging to file: %s", std::filesystem::absolute(filename).string().c_str());
+
     // If the file already exists, add newlines to space from the last log
     if (exists)
+    {
         mFile << std::endl;
+        // Read file contents to count empty lines and therefore know how many logs
+        // where written in the file.
+        std::ifstream in(filename);
+
+        if (!in.is_open() || !in.good())
+            LogWarning("Could not open log file for reading: " + std::filesystem::absolute(filename).string());
+        else
+        {
+            std::string line;
+            unsigned int count = 0;
+            while (!in.eof())
+            {
+                std::getline(in, line);
+                if (line.empty() || line == "\n")
+                    count++;
+            }
+            LogInfo("Starting logging #%d", count);
+        }
+    }
 }
 
 void Logger::OpenDefaultFile()
