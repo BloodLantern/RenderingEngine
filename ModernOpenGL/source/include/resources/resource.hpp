@@ -5,13 +5,16 @@
 class Resource
 {
 public:
+    Resource() {}
     Resource(const std::filesystem::path& filepath) { Load(filepath); }
     virtual ~Resource() { Unload(); }
 
     virtual void Load(const std::filesystem::path& filepath) = 0;
-    virtual bool IsLoaded() const { return !mFilepath.empty(); }
+    virtual bool IsLoaded() const { return mLoaded; }
     virtual void Unload() = 0;
 
 protected:
-    std::filesystem::path mFilepath;
+    bool mLoaded = false, mLinked = false;
+
+    virtual bool Link() = 0;
 };

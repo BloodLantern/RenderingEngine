@@ -11,10 +11,13 @@ public:
     Model(const std::string& filepath) : Resource(filepath) {}
 
 	// Inherited via Resource
-	virtual void Load(const std::filesystem::path& filepath) override;
-	virtual void Unload() override;
+	void Load(const std::filesystem::path& filepath) override;
+	void Unload() override;
 
 private:
-    std::vector<Vertex> vertices;
-    std::vector<unsigned int> indices;
+    std::vector<Vertex> mVertices;
+    std::vector<unsigned int> mIndices;
+    unsigned int mVBO = 0, mEBO = 0, mVAO = 0;
+
+    bool Link() override;
 };

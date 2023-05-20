@@ -18,15 +18,23 @@ std::condition_variable Logger::mCondVar;
 std::thread Logger::thread = std::thread(&Logger::Run);
 std::mutex mutex;
 bool synchronizing = false;
-bool running;
+bool running = true;
 
 void Logger::OpenFile(const std::filesystem::path &filename)
 {
     CloseFile();
+    const bool exists = std::filesystem::exists(filename);
     mFile.open(filename, std::ios_base::out | std::ios_base::app);
 
     if (!mFile.good())
-        LogWarningToVS("Could not open log file for writing: " + std::filesystem::absolute(filename).string());
+    {
+        LogWarning("Could not open log file for writing: " + std::filesystem::absolute(filename).string());
+        return;
+    }
+
+    // If the file already exists, add newlines to space from the last log
+    if (exists)
+        mFile << std::endl;
 }
 
 void Logger::OpenDefaultFile()
@@ -44,7 +52,7 @@ void Logger::CloseFile()
 {
     if (mFile.is_open())
     {
-        mFile << std::endl;
+        mFile.flush();
         mFile.close();
     }
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "resources/resource.hpp"
-#include "resources/texture.hpp"
 
 #include <type_traits>
 #include <unordered_map>

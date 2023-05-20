@@ -161,7 +161,6 @@
     <ClCompile Include="source\src\core\application.cpp" />
     <ClCompile Include="source\src\resources\model.cpp" />
     <ClCompile Include="source\src\resources\shader.cpp" />
-    <ClCompile Include="source\src\resources\texture.cpp" />
     <ClCompile Include="source\src\core\debug\logger.cpp" />
     <ClCompile Include="source\src\resources\resource_manager.cpp" />
     <ClCompile Include="source\src\main.cpp" />
@@ -176,7 +175,6 @@
     <ClInclude Include="source\include\resources\resource.hpp" />
     <ClInclude Include="source\include\resources\resource_manager.hpp" />
     <ClInclude Include="source\include\resources\shader.hpp" />
-    <ClInclude Include="source\include\resources\texture.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

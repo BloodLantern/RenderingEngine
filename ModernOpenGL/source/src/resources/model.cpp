@@ -2,6 +2,8 @@
 
 #include <fstream>
 
+#include <glad/glad.h>
+
 #include "core/debug/logger.hpp"
 
 void Model::Load(const std::filesystem::path& filepath)
@@ -13,6 +15,8 @@ void Model::Load(const std::filesystem::path& filepath)
         Logger::LogError("Failed to open file at path: %s", filepath.string());
         return;
     }
+
+    mLoaded = true;
 
     std::vector<Vector3> positions, normals;
     std::vector<Vector2> uvs;
@@ -48,7 +52,7 @@ void Model::Load(const std::filesystem::path& filepath)
         }
 
         // Currently doesn't support materials
-        if (!line[0] == 'f')
+        if (line[0] != 'f')
             continue;
 
         unsigned int modelIndices[3][3];
@@ -59,15 +63,64 @@ void Model::Load(const std::filesystem::path& filepath)
             &modelIndices[2][0], &modelIndices[2][1], &modelIndices[2][2]
         );
 
-        vertices.push_back(Vertex(positions[modelIndices[0][0] - 1], normals[modelIndices[0][1] - 1], uvs[modelIndices[0][2] - 1]));
-        vertices.push_back(Vertex(positions[modelIndices[1][0] - 1], normals[modelIndices[1][1] - 1], uvs[modelIndices[1][2] - 1]));
-        vertices.push_back(Vertex(positions[modelIndices[2][0] - 1], normals[modelIndices[2][1] - 1], uvs[modelIndices[2][2] - 1]));
+        mVertices.push_back(Vertex(positions[modelIndices[0][0] - 1], normals[modelIndices[0][1] - 1], uvs[modelIndices[0][2] - 1]));
+        mVertices.push_back(Vertex(positions[modelIndices[1][0] - 1], normals[modelIndices[1][1] - 1], uvs[modelIndices[1][2] - 1]));
+        mVertices.push_back(Vertex(positions[modelIndices[2][0] - 1], normals[modelIndices[2][1] - 1], uvs[modelIndices[2][2] - 1]));
 
         for (unsigned int i = 0; i < 9; i++)
-            indices.push_back(modelIndices[i / 3][i % 3]);
+            mIndices.push_back(modelIndices[i / 3][i % 3]);
     }
+
+    Link();
 }
 
 void Model::Unload()
 {
+    mVertices.clear();
+    mIndices.clear();
+    mLoaded = false;
+
+    if (mLinked)
+    {
+        glDeleteVertexArrays(1, &mVAO);
+        glDeleteBuffers(2, &mVBO);
+
+        mLinked = false;
+    }
+}
+
+bool Model::Link()
+{
+    if (mLinked)
+        return false;
+
+    // Setup the VAO
+    glGenVertexArrays(1, &mVAO);
+    glBindVertexArray(mVAO);
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(Vertex), 0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*) sizeof(Vector3));
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(0, 2, GL_FLOAT, false, sizeof(Vertex), (void*) (2 * sizeof(Vector3)));
+
+    // Generate the necessary buffers and set VBO and EBO ids
+    glGenBuffers(2, &mVBO);
+
+    // Setup the vertex buffer
+    glBindBuffer(GL_ARRAY_BUFFER, mVBO);
+    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(Vertex), mVertices.data(), GL_STATIC_DRAW);
+
+    // Setup the index buffer
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mEBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndices.size() * sizeof(unsigned int), mIndices.data(), GL_STATIC_DRAW);
+
+    // Unbind the VAO
+    glBindVertexArray(0);
+    // And the buffers
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+    return mLinked = true;
 }

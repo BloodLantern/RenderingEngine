@@ -2,13 +2,19 @@
 
 #include "core/debug/assertion.hpp"
 #include "core/debug/logger.hpp"
+#include "core/application.hpp"
 
 int main()
 {
-    using namespace std::chrono_literals;
-    Logger::OpenDefaultFile();
-    Logger::LogInfo("Test");
-    Logger::Stop();
+    Application app;
+
+    if (!app.Initialize({ 1280, 720 }, "ModernOpenGL"))
+    {
+        app.Shutdown();
+        return -1;
+    }
+    app.MainLoop();
+    app.Shutdown();
 
     return 0;
 }

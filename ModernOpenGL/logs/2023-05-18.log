@@ -27,12 +27,12 @@
 [14:51:01] [ERROR] Hey VS
 [14:51:01] [FATAL] Hey VS
 [14:51:01] [INFO] source\src\main.cpp(20): YEAAAAAAH
-[14:51:01] [INFO] source\src\main.cpp(21): crok
-[14:51:01] [INFO] source\src\main.cpp(22): croque
-[14:51:01] [INFO] source\src\main.cpp(23): crok
-[14:51:01] [INFO] source\src\main.cpp(24): croque
-[14:51:01] [INFO] source\src\main.cpp(25): crok bolu
-[14:51:01] [INFO] source\src\main.cpp(26): croque
+[14:51:01] [INFO] source\src\main.cpp(21): suuuuuu
+[14:51:01] [INFO] source\src\main.cpp(22): hola
+[14:51:01] [INFO] source\src\main.cpp(23): suuuuuu
+[14:51:01] [INFO] source\src\main.cpp(24): hola
+[14:51:01] [INFO] source\src\main.cpp(25): suuuuuu
+[14:51:01] [INFO] source\src\main.cpp(26): hola
 
 [14:57:08] [INFO] Hey, 7.012
 [14:57:08] [WARN] Hey, 7
@@ -43,12 +43,12 @@
 [14:57:08] [ERROR] Hey VS
 [14:57:08] [FATAL] Hey VS
 [14:57:08] [INFO] source\src\main.cpp(20): YEAAAAAAH
-[14:57:08] [INFO] source\src\main.cpp(21): crok
-[14:57:08] [INFO] source\src\main.cpp(22): croque
-[14:57:08] [INFO] source\src\main.cpp(23): crok
-[14:57:08] [INFO] source\src\main.cpp(24): croque
-[14:57:08] [INFO] source\src\main.cpp(25): crok bolu
-[14:57:08] [INFO] source\src\main.cpp(26): croque
+[14:57:08] [INFO] source\src\main.cpp(21): suuuuuu
+[14:57:08] [INFO] source\src\main.cpp(22): hola
+[14:57:08] [INFO] source\src\main.cpp(23): suuuuuu
+[14:57:08] [INFO] source\src\main.cpp(24): hola
+[14:57:08] [INFO] source\src\main.cpp(25): suuuuuu
+[14:57:08] [INFO] source\src\main.cpp(26): hola
 
 [14:59:00] [INFO] Hey, 7.012
 [14:59:00] [WARN] Hey, 7
@@ -59,12 +59,12 @@
 [14:59:00] [ERROR] Hey VS
 [14:59:00] [FATAL] Hey VS
 [14:59:00] [INFO] source\src\main.cpp(20): YEAAAAAAH
-[14:59:00] [INFO] source\src\main.cpp(21): crok
-[14:59:00] [INFO] source\src\main.cpp(22): croque
-[14:59:00] [INFO] source\src\main.cpp(23): crok
-[14:59:00] [INFO] source\src\main.cpp(24): croque
-[14:59:00] [INFO] source\src\main.cpp(25): crok bolu
-[14:59:00] [INFO] source\src\main.cpp(26): croque
+[14:59:00] [INFO] source\src\main.cpp(21): suuuuuu
+[14:59:00] [INFO] source\src\main.cpp(22): hola
+[14:59:00] [INFO] source\src\main.cpp(23): suuuuuu
+[14:59:00] [INFO] source\src\main.cpp(24): hola
+[14:59:00] [INFO] source\src\main.cpp(25): suuuuuu
+[14:59:00] [INFO] source\src\main.cpp(26): hola
 
 [15:01:14] [INFO] Hey, 7.012
 [15:01:14] [WARN] Hey, 7
@@ -75,22 +75,22 @@
 [15:01:14] [ERROR] Hey VS
 [15:01:14] [FATAL] Hey VS
 [15:01:14] [INFO] source\src\main.cpp(20): YEAAAAAAH
-[15:01:14] [INFO] source\src\main.cpp(21): crok
-[15:01:14] [INFO] source\src\main.cpp(22): croque
-[15:01:14] [INFO] source\src\main.cpp(23): crok
-[15:01:14] [INFO] source\src\main.cpp(24): croque
-[15:01:14] [INFO] source\src\main.cpp(25): crok bolu
-[15:01:14] [INFO] source\src\main.cpp(26): croque
-[15:01:32] [WARN] Debug assertion failed: crok
+[15:01:14] [INFO] source\src\main.cpp(21): suuuuuu
+[15:01:14] [INFO] source\src\main.cpp(22): hola
+[15:01:14] [INFO] source\src\main.cpp(23): suuuuuu
+[15:01:14] [INFO] source\src\main.cpp(24): hola
+[15:01:14] [INFO] source\src\main.cpp(25): suuuuuu
+[15:01:14] [INFO] source\src\main.cpp(26): hola
+[15:01:32] [WARN] Debug assertion failed: suuuuuu
 
 
-[15:08:05] [WARN] Debug assertion failed: crok
+[15:08:05] [WARN] Debug assertion failed: suuuuuu
 
-[15:50:24] [FATAL] Release assertion failed: crok
+[15:50:24] [FATAL] Release assertion failed: suuuuuu
 
-[15:51:47] [FATAL] Release assertion failed: crok
+[15:51:47] [FATAL] Release assertion failed: suuuuuu
 
-[15:51:55] [ERROR] Debug assertion failed: crok
+[15:51:55] [ERROR] Debug assertion failed: suuuuuu
 
 [15:54:33] [INFO] Test
 

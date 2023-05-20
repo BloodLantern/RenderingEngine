@@ -2,14 +2,35 @@
 
 #include "resources/resource.hpp"
 
+#include <string>
+
+#include <glad/glad.h>
+
 class Shader : public Resource
 {
 public:
-    Shader();
-    Shader(const std::filesystem::path& path);
+    enum class ShaderType : unsigned char
+    {
+        Vertex,
+        Fragment
+    };
 
-    bool Link();
+    Shader() = default;
+    Shader(const std::filesystem::path& vertexFile, const std::filesystem::path& fragmentFile) { LoadVertex(vertexFile); LoadFragment(fragmentFile); }
+    ~Shader() { glDeleteProgram(mProgram); }
 
-    bool SetVertexShader(const std::filesystem::path& path);
-    bool SetFragmentShader(const std::filesystem::path& path);
+    bool LoadVertex(const std::filesystem::path& filepath);
+    bool LoadFragment(const std::filesystem::path& filepath);
+    bool Link() override;
+
+private:
+    unsigned int mVertex = 0, mFragment = 0, mProgram = 0;
+    std::string mSource;
+
+    bool LoadShader(const std::filesystem::path& filepath, unsigned int& shader, const ShaderType type);
+
+    // Inherited via Resource
+    // Load shader source
+    void Load(const std::filesystem::path& filepath) override;
+    void Unload() override;
 };
