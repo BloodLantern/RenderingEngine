@@ -338,3 +338,82 @@
 [16:02:59] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
 [16:02:59] [INFO] Linking shader program...
 [16:03:01] [INFO] Shutting down application...
+
+[17:38:25] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[17:38:25] [INFO] Application successfully initialized
+[17:38:25] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[17:38:25] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[17:38:25] [INFO] Linking shader program...
+[17:38:27] [INFO] Shutting down application...
+
+[21:42:28] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[21:42:29] [INFO] Application successfully initialized
+[21:42:29] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[21:42:29] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[21:42:29] [INFO] Linking shader program...
+[21:42:45] [INFO] Shutting down application...
+
+[21:44:48] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[21:44:49] [INFO] Application successfully initialized
+[21:44:49] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[21:44:49] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[21:44:49] [INFO] Linking shader program
+[21:44:49] [INFO] Loading texture: assets	exturesiking_room.jpg
+[21:44:49] [ERROR] Failed to load texture: assets	exturesiking_room.jpg
+[21:44:57] [INFO] Shutting down application...
+
+[21:45:39] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[21:45:40] [INFO] Application successfully initialized
+[21:45:40] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[21:45:40] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[21:45:40] [INFO] Linking shader program
+[21:45:40] [INFO] Loading texture: assets\textures\viking_room.jpg
+[21:45:40] [ERROR] Failed to load texture: assets\textures\viking_room.jpg
+[21:46:25] [INFO] Shutting down application...
+
+[21:47:58] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[21:47:58] [INFO] Application successfully initialized
+[21:47:58] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[21:47:58] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[21:47:58] [INFO] Linking shader program
+
+[21:49:27] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[21:49:28] [INFO] Application successfully initialized
+[21:49:28] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[21:49:28] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[21:49:28] [INFO] Linking shader program
+[21:49:28] [INFO] Loading texture: assets\textures\viking_room.jpg
+[21:49:28] [ERROR] Failed to load texture: assets\textures\viking_room.jpg
+[21:49:31] [INFO] Shutting down application...
+
+[21:52:44] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[21:52:45] [INFO] Application successfully initialized
+[21:52:45] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[21:52:45] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[21:52:45] [INFO] Linking shader program
+[21:52:45] [INFO] Loading texture: assets\textures\viking_room.jpg
+[21:53:46] [INFO] Shutting down application...
+
+[22:00:55] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[22:00:56] [INFO] Application successfully initialized
+[22:00:56] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[22:00:56] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[22:00:56] [INFO] Linking shader program
+[22:00:56] [INFO] Loading texture: assets\textures\viking_room.jpg
+[22:00:59] [INFO] Shutting down application...
+
+[22:01:13] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[22:01:13] [INFO] Application successfully initialized
+[22:01:13] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[22:01:13] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[22:01:13] [INFO] Linking shader program
+[22:01:13] [INFO] Loading texture: assets\textures\viking_room.jpg
+[22:01:17] [INFO] Shutting down application...
+
+[22:01:21] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[22:01:21] [INFO] Application successfully initialized
+[22:01:21] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[22:01:21] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[22:01:21] [INFO] Linking shader program
+[22:01:21] [INFO] Loading texture: assets\textures\viking_room.jpg
+[22:01:34] [INFO] Shutting down application...

@@ -8,8 +8,8 @@ Shader::Shader(std::filesystem::path& folder)
 {
     folder = std::filesystem::relative(folder);
 
-    LoadVertex(folder.string() + "\\vertex.glsl");
-    LoadFragment(folder.string() + "\\fragment.glsl");
+    LoadVertex(folder.string() + "\\vertex.vs");
+    LoadFragment(folder.string() + "\\fragment.fs");
 
     Link();
 }
@@ -89,7 +89,7 @@ void Shader::Unload()
 
 bool Shader::Link()
 {
-    Logger::LogInfo("Linking shader program...");
+    Logger::LogInfo("Linking shader program");
 
     mProgram = glCreateProgram();
     glAttachShader(mProgram, mVertex);

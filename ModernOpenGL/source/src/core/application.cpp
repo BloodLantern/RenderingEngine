@@ -3,7 +3,12 @@
 #include "core/debug/logger.hpp"
 #include "resources/shader.hpp"
 #include "resources/model.hpp"
+#include "resources/texture.hpp"
 #include "resources/resource_manager.hpp"
+
+#include <ImGui/imgui.h>
+#include <ImGui/imgui_impl_glfw.h>
+#include <ImGui/imgui_impl_opengl3.h>
 
 Application::Application()
 {
@@ -12,6 +17,7 @@ Application::Application()
 
 Shader* shader;
 Model* model;
+Texture* texture;
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
 {
@@ -57,10 +63,26 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
     // Enable transparency
     //glEnable(GL_BLEND);
 
+    // Initialize ImGui
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;     // Enable Docking
+    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;   // Enable viewports
+    io.Fonts->AddFontDefault();
+
+    // Setup Dear ImGui style
+    ImGui::StyleColorsDark();
+
+    // Setup Platform/Renderer bindings
+    ImGui_ImplGlfw_InitForOpenGL(mWindow, true);
+    ImGui_ImplOpenGL3_Init("#version 460");
+
     Logger::LogInfo("Application successfully initialized");
 
     shader = ResourceManager::Load<Shader>("source\\shaders");
     model = ResourceManager::Load<Model>("assets\\meshes\\viking_room.obj");
+    texture = ResourceManager::Load<Texture>("assets\\textures\\viking_room.jpg");
 
     return true;
 }
@@ -72,8 +94,27 @@ void Application::MainLoop()
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        // Start the Dear ImGui frame
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
         shader->Use();
+        texture->Use();
         model->Draw();
+
+        // Rendering
+        ImGui::Render();
+        int displayW, displayH;
+        glfwGetFramebufferSize(mWindow, &displayW, &displayH);
+        glViewport(0, 0, displayW, displayH);
+
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+        GLFWwindow* ctxBackup = glfwGetCurrentContext();
+        ImGui::UpdatePlatformWindows();
+        ImGui::RenderPlatformWindowsDefault();
+        glfwMakeContextCurrent(ctxBackup);
 
         glfwSwapBuffers(mWindow);
     }
@@ -84,6 +125,11 @@ void Application::Shutdown()
     Logger::LogInfo("Shutting down application...");
 
     ResourceManager::UnloadAll();
+
+    // Shutdown ImGui
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
 
 	glfwDestroyWindow(mWindow);
     glfwTerminate();

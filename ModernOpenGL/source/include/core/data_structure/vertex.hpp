@@ -9,7 +9,6 @@ struct Vertex
     Vector3 Position;
     Vector2 UV;
     Vector3 Normal;
-    //Vector4 Color;
 
     Vertex() = default;
     Vertex(const Vector3& position, const Vector2& uv, const Vector3& normal)

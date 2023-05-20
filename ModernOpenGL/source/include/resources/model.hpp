@@ -21,6 +21,7 @@ private:
     std::vector<Vertex> mVertices;
     std::vector<unsigned int> mIndices;
     unsigned int mVBO = 0, mEBO = 0, mVAO = 0;
+    bool mLinked = false;
 
-    bool Link() override;
+    bool Link();
 };

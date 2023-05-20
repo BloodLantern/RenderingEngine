@@ -14,7 +14,5 @@ public:
     virtual void Unload() = 0;
 
 protected:
-    bool mLoaded = false, mLinked = false;
-
-    virtual bool Link() = 0;
+    bool mLoaded = false;
 };
