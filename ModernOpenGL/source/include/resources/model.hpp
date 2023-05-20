@@ -9,8 +9,8 @@ class Model : public Resource
 {
 public:
     Model(const std::string& filepath) : Resource(filepath) {}
+    virtual ~Model() { Unload(); }
 
-	// Inherited via Resource
 	void Load(const std::filesystem::path& filepath) override;
 	void Unload() override;
 

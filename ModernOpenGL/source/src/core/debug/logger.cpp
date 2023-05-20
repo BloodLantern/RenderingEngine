@@ -113,39 +113,38 @@ void Logger::Log(const LogEntry& entry)
     const std::string time = (std::ostringstream() << timeFormatter).str();
 
     // Setup the base text message
-    const std::string& baseMessage = entry.message + '\n', coloredBaseMessage = time + baseMessage;
+    std::string baseMessage = entry.message + '\n';
     LogLevel level = entry.level;
     
     const bool outputToVS = (int) level & VS_OUTPUT_LOG_BIT;
     if (outputToVS)
         level = LOG_LEVEL_BINARY_OP(level, ~VS_OUTPUT_LOG_BIT, &);
 
-    std::string coloredMessage, uncoloredMessage;
+    const char* color = ANSI_RESET;
     switch (level)
     {
         case LogLevel::Info:
-            coloredMessage = coloredBaseMessage;
-            uncoloredMessage = time + "[INFO] " + baseMessage;
+            baseMessage = time + "[INFO] " + baseMessage;
             break;
         case LogLevel::Warning:
-            coloredMessage = ANSI_COLOR_YELLOW + coloredBaseMessage + ANSI_RESET;
-            uncoloredMessage = time + "[WARN] " + baseMessage;
+            color = ANSI_COLOR_YELLOW;
+            baseMessage = time + "[WARN] " + baseMessage;
             break;
         case LogLevel::Error:
-            coloredMessage = ANSI_COLOR_RED + coloredBaseMessage + ANSI_RESET;
-            uncoloredMessage = time + "[ERROR] " + baseMessage;
+            color = ANSI_COLOR_RED;
+            baseMessage = time + "[ERROR] " + baseMessage;
             break;
         case LogLevel::Fatal:
-            coloredMessage = ANSI_STYLE_BOLD ANSI_COLOR_RED + coloredBaseMessage + ANSI_RESET;
-            uncoloredMessage = time + "[FATAL] " + baseMessage;
+            color = ANSI_STYLE_BOLD ANSI_COLOR_RED;
+            baseMessage = time + "[FATAL] " + baseMessage;
             break;
     }
 
-    std::cout << coloredMessage;
+    std::cout << color + baseMessage + ANSI_RESET;
 
     if (mFile.is_open())
-        mFile << uncoloredMessage;
+        mFile << baseMessage;
 
     if (outputToVS)
-        OutputDebugStringA(uncoloredMessage.c_str());
+        OutputDebugStringA(baseMessage.c_str());
 }

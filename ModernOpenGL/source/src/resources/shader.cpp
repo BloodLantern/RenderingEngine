@@ -4,21 +4,35 @@
 
 #include "core/debug/logger.hpp"
 
+Shader::Shader(std::filesystem::path& folder)
+{
+    folder = std::filesystem::relative(folder);
+
+    LoadVertex(folder.string() + "\\vertex.glsl");
+    LoadFragment(folder.string() + "\\fragment.glsl");
+
+    Link();
+}
+
 bool Shader::LoadVertex(const std::filesystem::path& filepath)
 {
-    Logger::LogInfo("Compiling vertex shader: %s", filepath.string());
+    Logger::LogInfo("Compiling vertex shader: %s", filepath.string().c_str());
     return LoadShader(filepath, mVertex, ShaderType::Vertex);
 }
 
 bool Shader::LoadFragment(const std::filesystem::path& filepath)
 {
-    Logger::LogInfo("Compiling fragment shader: %s", filepath.string());
+    Logger::LogInfo("Compiling fragment shader: %s", filepath.string().c_str());
     return LoadShader(filepath, mFragment, ShaderType::Fragment);
 }
 
 bool Shader::LoadShader(const std::filesystem::path &filepath, unsigned int& shader, const ShaderType type)
 {
     Load(filepath);
+
+    if (!mLoaded)
+        return false;
+    mLoaded = false;
 
     GLenum shaderType = 0;
     switch (type)
@@ -56,7 +70,7 @@ void Shader::Load(const std::filesystem::path &filepath)
 
     if (!file.is_open() || !file.good())
     {
-        Logger::LogError("Could not open shader file: %s", std::filesystem::absolute(filepath).string());
+        Logger::LogError("Could not open shader file: %s", std::filesystem::absolute(filepath).string().c_str());
         return;
     }
 
@@ -84,7 +98,8 @@ bool Shader::Link()
 
     int success;
     glGetProgramiv(mProgram, GL_LINK_STATUS, &success);
-    if (!success) {
+    if (!success)
+    {
         char infoLog[512];
         glGetProgramInfoLog(mProgram, 512, NULL, infoLog);
         Logger::LogError("Shader program linking failed: %s", infoLog);

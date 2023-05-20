@@ -11,3 +11,10 @@ void ResourceManager::Unload(const std::string& name)
     delete it->second;
     mResources.erase(it);
 }
+
+void ResourceManager::UnloadAll()
+{
+    for (std::pair<const std::string, Resource *>& it : mResources)
+        delete it.second;
+    mResources.clear();
+}

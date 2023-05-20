@@ -5,3 +5,105 @@
 [02:08:13] [INFO] Initializing application with size { 1280, 720 } and title ModernOpenGL...
 [02:08:13] [INFO] Application successfully initialized
 [02:08:15] [INFO] Shutting down application...
+
+[12:24:00] [INFO] Initializing application with size { 1280, 720 } and title ModernOpenGL...
+[12:24:01] [INFO] Application successfully initialized
+[12:24:02] [INFO] Shutting down application...
+
+[14:25:37] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:25:38] [INFO] Application successfully initialized
+[14:25:38] [INFO] Compiling vertex shader: `7˙åp
+[14:25:38] [ERROR] Could not open shader file: †8˙åp
+[14:25:38] [INFO] Compiling fragment shader: `üÙåp
+[14:25:38] [ERROR] Could not open shader file: 3˙åp
+[14:25:57] [INFO] Shutting down application...
+
+[14:31:28] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:31:29] [INFO] Application successfully initialized
+[14:31:29] [INFO] Compiling vertex shader: ¿OcR
+[14:31:29] [ERROR] Could not open shader file:  JcR
+[14:31:29] [INFO] Compiling fragment shader: @HcR
+[14:31:29] [ERROR] Could not open shader file: FcR
+[14:31:33] [INFO] Shutting down application...
+
+[14:32:07] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:32:07] [INFO] Application successfully initialized
+[14:32:37] [INFO] Compiling vertex shader: –∞X>
+
+[14:34:27] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:34:27] [INFO] Application successfully initialized
+[14:34:27] [INFO] Compiling vertex shader: shaders/vertex.glsl
+[14:34:27] [ERROR] Could not open shader file: `YSAd
+[14:34:27] [INFO] Compiling fragment shader: ‡VSAd
+[14:34:27] [ERROR] Could not open shader file: ê[SAd
+[14:34:29] [INFO] Shutting down application...
+
+[14:36:07] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:36:07] [INFO] Application successfully initialized
+[14:36:07] [INFO] Compiling vertex shader: shaders/vertex.glsl
+[14:36:07] [ERROR] Could not open shader file: `È˘Ì,
+[14:36:07] [INFO] Compiling fragment shader: È˘Ì,
+[14:36:07] [ERROR] Could not open shader file: Ô˘Ì,
+[14:36:17] [INFO] Shutting down application...
+
+[14:36:35] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:36:35] [INFO] Application successfully initialized
+[14:36:35] [INFO] Compiling vertex shader: shaders/vertex.glsl
+[14:36:35] [ERROR] Could not open shader file: ¿~?÷
+[14:36:35] [INFO] Compiling fragment shader: shaders/fragment.glsl
+[14:36:35] [ERROR] Could not open shader file: ¿É?÷
+[14:36:40] [INFO] Shutting down application...
+
+[14:36:56] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:36:57] [INFO] Application successfully initialized
+[14:36:57] [INFO] Compiling vertex shader: shaders/vertex.glsl
+[14:36:57] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\vertex.glsl
+[14:36:57] [INFO] Compiling fragment shader: shaders/fragment.glsl
+[14:36:57] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\fragment.glsl
+[14:37:26] [INFO] Shutting down application...
+
+[14:40:13] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:40:13] [INFO] Application successfully initialized
+[14:40:13] [INFO] Compiling vertex shader: shaders/vertex.glsl
+[14:40:13] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\vertex.glsl
+[14:40:13] [INFO] Compiling fragment shader: shaders/fragment.glsl
+[14:40:13] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\fragment.glsl
+[14:40:25] [INFO] Shutting down application...
+
+[14:40:54] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:40:54] [INFO] Application successfully initialized
+[14:40:54] [INFO] Compiling vertex shader: 
+[14:40:54] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\vertex.glsl
+[14:40:54] [INFO] Compiling fragment shader: 
+[14:40:54] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\fragment.glsl
+[14:40:59] [INFO] Shutting down application...
+
+[14:43:40] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:43:41] [INFO] Application successfully initialized
+[14:43:41] [INFO] Compiling vertex shader: shaders/vertex.glsl
+[14:43:41] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\vertex.glsl
+[14:43:41] [INFO] Compiling fragment shader: shaders/fragment.glsl
+[14:43:41] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\fragment.glsl
+[14:43:53] [INFO] Shutting down application...
+
+[14:47:17] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:47:18] [INFO] Application successfully initialized
+[14:47:18] [INFO] Compiling vertex shader: shaders/vertex.glsl
+[14:47:18] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\vertex.glsl
+[14:47:18] [INFO] Compiling fragment shader: shaders/fragment.glsl
+[14:47:18] [ERROR] Could not open shader file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\shaders\fragment.glsl
+[14:47:21] [INFO] Shutting down application...
+
+[14:51:40] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[14:51:40] [INFO] Application successfully initialized
+[14:51:40] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[14:51:40] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[14:51:40] [INFO] Linking shader program...
+[14:51:51] [INFO] Shutting down application...
+
+[15:07:17] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[15:07:17] [INFO] Application successfully initialized
+[15:07:17] [INFO] Compiling vertex shader: source\shaders\vertex.glsl
+[15:07:17] [INFO] Compiling fragment shader: source\shaders\fragment.glsl
+[15:07:17] [INFO] Linking shader program...
+[15:07:21] [INFO] Shutting down application...

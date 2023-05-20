@@ -2,6 +2,7 @@
 
 #include "core/debug/logger.hpp"
 #include "resources/shader.hpp"
+#include "resources/resource_manager.hpp"
 
 Application::Application()
 {
@@ -10,7 +11,7 @@ Application::Application()
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
 {
-    Logger::LogInfo("Initializing application with size { %d, %d } and title %s...", windowSize.x, windowSize.y, windowTitle);
+    Logger::LogInfo("Initializing application with size [%d, %d] and title %s...", windowSize.x, windowSize.y, windowTitle);
 
     // Initialize GLFW
     glfwInit();
@@ -45,8 +46,7 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
     Logger::LogInfo("Application successfully initialized");
 
-    Shader shader("source/shaders/vertex.glsl", "source/shaders/fragment.glsl");
-    shader.Link();
+    ResourceManager::Load<Shader>("source\\shaders");
 
     return true;
 }
@@ -63,7 +63,11 @@ void Application::MainLoop()
 void Application::Shutdown()
 {
     Logger::LogInfo("Shutting down application...");
+
+    ResourceManager::UnloadAll();
+
 	glfwDestroyWindow(mWindow);
     glfwTerminate();
+
     Logger::Stop();
 }

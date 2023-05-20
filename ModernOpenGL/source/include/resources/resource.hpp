@@ -7,7 +7,7 @@ class Resource
 public:
     Resource() {}
     Resource(const std::filesystem::path& filepath) { Load(filepath); }
-    virtual ~Resource() { Unload(); }
+    virtual ~Resource() {}
 
     virtual void Load(const std::filesystem::path& filepath) = 0;
     virtual bool IsLoaded() const { return mLoaded; }
