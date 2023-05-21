@@ -5,6 +5,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "core/data_structure/graph.hpp"
+
 class Application
 {
 public:
@@ -17,4 +19,6 @@ public:
 private:
     bool mInitialized;
     GLFWwindow* mWindow;
+
+    Graph<Transform> mGraph;
 };

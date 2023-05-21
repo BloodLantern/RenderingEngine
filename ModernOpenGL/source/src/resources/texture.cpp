@@ -2,8 +2,6 @@
 
 #include <stb_image.h>
 
-#include <glad/glad.h>
-
 #include <vector2i.hpp>
 
 #include "core/debug/logger.hpp"
@@ -35,13 +33,4 @@ void Texture::Load(const std::filesystem::path& filepath)
     stbi_image_free(data);
 
     mLoaded = true;
-}
-
-void Texture::Unload()
-{
-    glDeleteTextures(1, &mId);
-}
-
-void Texture::Use()
-{
 }

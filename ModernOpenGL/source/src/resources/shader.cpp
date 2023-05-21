@@ -4,24 +4,30 @@
 
 #include "core/debug/logger.hpp"
 
-Shader::Shader(std::filesystem::path& folder)
+Shader::Shader(std::filesystem::path& folder, const std::string& vertexName, const std::string& fragmentName)
 {
     folder = std::filesystem::relative(folder);
 
-    LoadVertex(folder.string() + "\\vertex.vs");
-    LoadFragment(folder.string() + "\\fragment.fs");
+    LoadVertex(folder.string() + '\\' + vertexName + ".vs");
+    LoadFragment(folder.string() + '\\' + fragmentName + ".fs");
 
     Link();
 }
 
 bool Shader::LoadVertex(const std::filesystem::path& filepath)
 {
+    if (mVertex != 0)
+        Unload(mVertex);
+
     Logger::LogInfo("Compiling vertex shader: %s", filepath.string().c_str());
     return LoadShader(filepath, mVertex, ShaderType::Vertex);
 }
 
 bool Shader::LoadFragment(const std::filesystem::path& filepath)
 {
+    if (mFragment != 0)
+        Unload(mFragment);
+
     Logger::LogInfo("Compiling fragment shader: %s", filepath.string().c_str());
     return LoadShader(filepath, mFragment, ShaderType::Fragment);
 }
@@ -83,8 +89,14 @@ void Shader::Unload()
     mSource = "";
     mLoaded = false;
     
-    glDeleteShader(mVertex);
-    glDeleteShader(mFragment);
+    Unload(mVertex);
+    Unload(mFragment);
+}
+
+void Shader::Unload(unsigned int& shader)
+{
+    glDeleteShader(shader);
+    shader = 0;
 }
 
 bool Shader::Link()

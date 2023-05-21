@@ -5,6 +5,7 @@
 #include "resources/model.hpp"
 #include "resources/texture.hpp"
 #include "resources/resource_manager.hpp"
+#include "core/object.hpp"
 
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_glfw.h>
@@ -14,10 +15,6 @@ Application::Application()
 {
     Logger::OpenDefaultFile();
 }
-
-Shader* shader;
-Model* model;
-Texture* texture;
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
 {
@@ -80,9 +77,14 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
     Logger::LogInfo("Application successfully initialized");
 
-    shader = ResourceManager::Load<Shader>("source\\shaders");
-    model = ResourceManager::Load<Model>("assets\\meshes\\viking_room.obj");
-    texture = ResourceManager::Load<Texture>("assets\\textures\\viking_room.jpg");
+    Object object("Viking room");
+    object.mesh = new Mesh(
+        ResourceManager::Load<Model>("assets\\meshes\\viking_room.obj"),
+        ResourceManager::Load<Texture>("assets\\textures\\viking_room.jpg"),
+        ResourceManager::Load<Shader>("source\\shaders")
+    );
+    // TODO: Find a better way to do this
+    //mGraph.root->children.push_back(object.transform);
 
     return true;
 }
@@ -99,9 +101,8 @@ void Application::MainLoop()
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        shader->Use();
-        texture->Use();
-        model->Draw();
+        mGraph.Update();
+        mGraph.Draw();
 
         // Rendering
         ImGui::Render();

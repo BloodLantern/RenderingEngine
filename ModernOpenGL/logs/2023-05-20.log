@@ -12,46 +12,46 @@
 
 [14:25:37] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
 [14:25:38] [INFO] Application successfully initialized
-[14:25:38] [INFO] Compiling vertex shader: `7˙åp
-[14:25:38] [ERROR] Could not open shader file: †8˙åp
-[14:25:38] [INFO] Compiling fragment shader: `üÙåp
-[14:25:38] [ERROR] Could not open shader file: 3˙åp
+[14:25:38] [INFO] Compiling vertex shader:
+[14:25:38] [ERROR] Could not open shader file:
+[14:25:38] [INFO] Compiling fragment shader:
+[14:25:38] [ERROR] Could not open shader file:
 [14:25:57] [INFO] Shutting down application...
 
 [14:31:28] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
 [14:31:29] [INFO] Application successfully initialized
-[14:31:29] [INFO] Compiling vertex shader: ¿OcR
-[14:31:29] [ERROR] Could not open shader file:  JcR
-[14:31:29] [INFO] Compiling fragment shader: @HcR
-[14:31:29] [ERROR] Could not open shader file: FcR
+[14:31:29] [INFO] Compiling vertex shader:
+[14:31:29] [ERROR] Could not open shader file:
+[14:31:29] [INFO] Compiling fragment shader:
+[14:31:29] [ERROR] Could not open shader file:
 [14:31:33] [INFO] Shutting down application...
 
 [14:32:07] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
 [14:32:07] [INFO] Application successfully initialized
-[14:32:37] [INFO] Compiling vertex shader: –∞X>
+[14:32:37] [INFO] Compiling vertex shader:
 
 [14:34:27] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
 [14:34:27] [INFO] Application successfully initialized
-[14:34:27] [INFO] Compiling vertex shader: shaders/vertex.glsl
-[14:34:27] [ERROR] Could not open shader file: `YSAd
-[14:34:27] [INFO] Compiling fragment shader: ‡VSAd
-[14:34:27] [ERROR] Could not open shader file: ê[SAd
+[14:34:27] [INFO] Compiling vertex shader:
+[14:34:27] [ERROR] Could not open shader file:
+[14:34:27] [INFO] Compiling fragment shader:
+[14:34:27] [ERROR] Could not open shader file:
 [14:34:29] [INFO] Shutting down application...
 
 [14:36:07] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
 [14:36:07] [INFO] Application successfully initialized
-[14:36:07] [INFO] Compiling vertex shader: shaders/vertex.glsl
-[14:36:07] [ERROR] Could not open shader file: `È˘Ì,
-[14:36:07] [INFO] Compiling fragment shader: È˘Ì,
-[14:36:07] [ERROR] Could not open shader file: Ô˘Ì,
+[14:36:07] [INFO] Compiling vertex shader:
+[14:36:07] [ERROR] Could not open shader file:
+[14:36:07] [INFO] Compiling fragment shader:
+[14:36:07] [ERROR] Could not open shader file:
 [14:36:17] [INFO] Shutting down application...
 
 [14:36:35] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
 [14:36:35] [INFO] Application successfully initialized
-[14:36:35] [INFO] Compiling vertex shader: shaders/vertex.glsl
-[14:36:35] [ERROR] Could not open shader file: ¿~?÷
-[14:36:35] [INFO] Compiling fragment shader: shaders/fragment.glsl
-[14:36:35] [ERROR] Could not open shader file: ¿É?÷
+[14:36:35] [INFO] Compiling vertex shader:
+[14:36:35] [ERROR] Could not open shader file:
+[14:36:35] [INFO] Compiling fragment shader:
+[14:36:35] [ERROR] Could not open shader file:
 [14:36:40] [INFO] Shutting down application...
 
 [14:36:56] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
@@ -417,3 +417,69 @@
 [22:01:21] [INFO] Linking shader program
 [22:01:21] [INFO] Loading texture: assets\textures\viking_room.jpg
 [22:01:34] [INFO] Shutting down application...
+
+[23:27:14] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[23:27:15] [INFO] Application successfully initialized
+[23:27:15] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[23:27:15] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[23:27:15] [INFO] Linking shader program
+[23:27:15] [INFO] Loading texture: assets\textures\viking_room.jpg
+[23:27:16] [INFO] Shutting down application...
+
+[23:30:52] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[23:30:52] [INFO] Application successfully initialized
+[23:30:52] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[23:30:52] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[23:30:52] [INFO] Linking shader program
+[23:30:52] [INFO] Loading model: assets\meshes\viking_room.obj
+[23:30:53] [INFO] Linking model
+[23:30:53] [INFO] Loading texture: assets\textures\viking_room.jpg
+[23:31:16] [INFO] Shutting down application...
+
+[23:43:13] [INFO] Logging to file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\logs\2023-05-20.log
+[23:43:13] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[23:43:13] [INFO] Application successfully initialized
+[23:43:13] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[23:43:13] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[23:43:13] [INFO] Linking shader program
+[23:43:13] [INFO] Loading model: assets\meshes\viking_room.obj
+[23:43:13] [INFO] Linking model
+[23:43:13] [INFO] Loading texture: assets\textures\viking_room.jpg
+
+[23:43:52] [INFO] Logging to file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\logs\2023-05-20.log
+[23:43:52] [INFO] Starting logging # 4
+[23:43:52] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[23:43:53] [INFO] Application successfully initialized
+[23:43:53] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[23:43:53] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[23:43:53] [INFO] Linking shader program
+[23:43:53] [INFO] Loading model: assets\meshes\viking_room.obj
+[23:43:53] [INFO] Linking model
+[23:43:53] [INFO] Loading texture: assets\textures\viking_room.jpg
+
+[23:45:02] [INFO] Logging to file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\logs\2023-05-20.log
+[23:45:02] [INFO] Starting logging #4
+[23:45:02] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[23:45:03] [INFO] Application successfully initialized
+[23:45:03] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[23:45:03] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[23:45:03] [INFO] Linking shader program
+[23:45:03] [INFO] Loading model: assets\meshes\viking_room.obj
+[23:45:03] [INFO] Linking model
+[23:45:03] [INFO] Loading texture: assets\textures\viking_room.jpg
+
+[23:46:15] [INFO] Logging to file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\logs\2023-05-20.log
+
+[23:48:16] [INFO] Logging to file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\logs\2023-05-20.log
+
+[23:49:39] [INFO] Logging to file: C:\Users\maxim\git\ModernOpenGL\ModernOpenGL\logs\2023-05-20.log
+[23:49:41] [INFO] Starting logging #62
+[23:49:41] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[23:49:41] [INFO] Application successfully initialized
+[23:49:41] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[23:49:41] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[23:49:41] [INFO] Linking shader program
+[23:49:41] [INFO] Loading model: assets\meshes\viking_room.obj
+[23:49:42] [INFO] Linking model
+[23:49:42] [INFO] Loading texture: assets\textures\viking_room.jpg
+[23:50:01] [INFO] Shutting down application...

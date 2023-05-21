@@ -2,6 +2,8 @@
 
 #include "resources/resource.hpp"
 
+#include <glad/glad.h>
+
 class Texture : public Resource
 {
 public:
@@ -10,9 +12,9 @@ public:
     ~Texture() { Unload(); }
 
     void Load(const std::filesystem::path& filepath) override;
-    void Unload() override;
+    void Unload() override { glDeleteTextures(1, &mId); }
 
-    void Use();
+    void Use() { glBindTexture(GL_TEXTURE_2D, mId); }
 
 private:
     unsigned int mId;

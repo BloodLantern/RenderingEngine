@@ -23,7 +23,11 @@ bool running = true;
 void Logger::OpenFile(const std::filesystem::path &filename)
 {
     CloseFile();
+    
     const bool exists = std::filesystem::exists(filename);
+    if (!exists)
+        std::filesystem::create_directories(filename.parent_path());
+
     mFile.open(filename, std::ios_base::out | std::ios_base::app);
 
     if (!mFile.is_open() || !mFile.good())
@@ -54,9 +58,11 @@ void Logger::OpenFile(const std::filesystem::path &filename)
                 if (line.empty() || line == "\n")
                     count++;
             }
-            LogInfo("Starting logging #%d", count);
+            LogInfo("Starting logging #%d", count - 1);
         }
     }
+    else
+        LogInfo("Starting logging #0");
 }
 
 void Logger::OpenDefaultFile()

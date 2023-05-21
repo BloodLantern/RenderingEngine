@@ -6,11 +6,11 @@
 
 struct Vertex
 {
-    Vector3 Position;
-    Vector2 UV;
-    Vector3 Normal;
+    Vector3 position;
+    Vector2 uv;
+    Vector3 normal;
 
     Vertex() = default;
     Vertex(const Vector3& position, const Vector2& uv, const Vector3& normal)
-        : Position(position), UV(uv), Normal(normal) {}
+        : position(position), uv(uv), normal(normal) {}
 };

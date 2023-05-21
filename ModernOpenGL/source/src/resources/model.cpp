@@ -8,11 +8,13 @@
 
 void Model::Load(const std::filesystem::path& filepath)
 {
+    Logger::LogInfo("Loading model: %s", filepath.string().c_str());
+
     std::ifstream file(filepath);
 
     if (!file.is_open() || !file.good())
     {
-        Logger::LogError("Failed to open file at path: %s", filepath.string());
+        Logger::LogError("Failed to open file at path: %s", filepath.string().c_str());
         return;
     }
 
@@ -98,6 +100,8 @@ bool Model::Link()
 {
     if (mLinked)
         return false;
+
+    Logger::LogInfo("Linking model");
 
     // Generate the VAO
     glGenVertexArrays(1, &mVAO);

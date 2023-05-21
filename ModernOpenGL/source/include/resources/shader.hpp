@@ -23,7 +23,7 @@ public:
     };
 
     Shader() = default;
-    Shader(std::filesystem::path& folder);
+    Shader(std::filesystem::path& folder, const std::string& vertexName = "vertex", const std::string& fragmentName = "fragment");
     Shader(const std::filesystem::path& vertexFile, const std::filesystem::path& fragmentFile) { LoadVertex(vertexFile); LoadFragment(fragmentFile); }
     ~Shader() { glDeleteProgram(mProgram); }
 
@@ -54,4 +54,5 @@ private:
     // Load shader source
     void Load(const std::filesystem::path& filepath) override;
     void Unload() override;
+    void Unload(unsigned int& shader);
 };
