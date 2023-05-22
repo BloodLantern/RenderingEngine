@@ -5,7 +5,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "core/data_structure/graph.hpp"
+#include "core/scene.hpp"
 
 class Application
 {
@@ -20,5 +20,6 @@ private:
     bool mInitialized;
     GLFWwindow* mWindow;
 
-    Graph<Transform> mGraph;
+    Scene mScene;
+    float mDeltaTime;
 };

@@ -4,14 +4,12 @@
 
 Transform::~Transform()
 {
-    if (parent)
-        std::erase(parent->children, this);
 
-    for (Transform* child : children)
-        delete child;
+    /*for (Transform* child : mChildren)
+        delete child;*/
 }
 
-void Transform::Update()
+void Transform::Update(const Transform* parent)
 {
     mLocal = Matrix4x4::TRS(position, rotation, scale);
 
@@ -19,15 +17,4 @@ void Transform::Update()
         mGlobal = parent->mGlobal * mLocal;
     else
         mGlobal = mLocal;
-
-    for (Transform* child : children)
-        child->Update();
-}
-
-void Transform::DrawObject()
-{
-    mObject.Draw();
-
-    for (Transform* child : children)
-        child->DrawObject();
 }

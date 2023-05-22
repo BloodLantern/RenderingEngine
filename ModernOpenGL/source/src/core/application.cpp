@@ -18,7 +18,7 @@ Application::Application()
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
 {
-    Logger::LogInfo("Initializing application with size [%d, %d] and title %s...", windowSize.x, windowSize.y, windowTitle);
+    Logger::LogInfo("Initializing application with size [%d, %d] and title '%s'...", windowSize.x, windowSize.y, windowTitle);
 
     // Initialize GLFW
     glfwInit();
@@ -51,7 +51,7 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
 	glfwShowWindow(mWindow);
 
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClearColor(0.45f, 0.55f, 0.60f, 1.00f);
 
     // Enable depth test
     glEnable(GL_DEPTH_TEST);
@@ -63,7 +63,7 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
     // Initialize ImGui
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGuiIO& io = ImGui::GetIO();
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;     // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;   // Enable viewports
     io.Fonts->AddFontDefault();
@@ -77,14 +77,13 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
     Logger::LogInfo("Application successfully initialized");
 
-    Object object("Viking room");
-    object.mesh = new Mesh(
+    Object* object = new Object("Viking room");
+    object->mesh = new Mesh(
         ResourceManager::Load<Model>("assets\\meshes\\viking_room.obj"),
         ResourceManager::Load<Texture>("assets\\textures\\viking_room.jpg"),
         ResourceManager::Load<Shader>("source\\shaders")
     );
-    // TODO: Find a better way to do this
-    //mGraph.root->children.push_back(object.transform);
+    mScene.root.AddChild(object);
 
     return true;
 }
@@ -93,6 +92,7 @@ void Application::MainLoop()
 {
     while (!glfwWindowShouldClose(mWindow))
     {
+        const float time = (float) glfwGetTime();
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -101,8 +101,8 @@ void Application::MainLoop()
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        mGraph.Update();
-        mGraph.Draw();
+        mScene.Update(mDeltaTime);
+        mScene.Draw();
 
         // Rendering
         ImGui::Render();
@@ -118,6 +118,7 @@ void Application::MainLoop()
         glfwMakeContextCurrent(ctxBackup);
 
         glfwSwapBuffers(mWindow);
+        mDeltaTime = ((float) glfwGetTime()) - time;
     }
 }
 

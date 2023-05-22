@@ -1,0 +1,102 @@
+[08:57:47] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[08:57:47] [INFO] Starting logging #0
+[08:57:47] [INFO] Initializing application with size [1280, 720] and title ModernOpenGL...
+[08:57:49] [INFO] Application successfully initialized
+[08:57:49] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[08:57:49] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[08:57:49] [INFO] Linking shader program
+[08:57:49] [INFO] Loading texture: assets\textures\viking_room.jpg
+[08:57:49] [INFO] Loading model: assets\meshes\viking_room.obj
+[08:57:50] [INFO] Linking model
+[08:58:08] [INFO] Shutting down application...
+
+[10:24:37] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[10:24:37] [INFO] Starting logging #1
+[10:24:37] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:24:38] [INFO] Application successfully initialized
+[10:24:38] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[10:24:38] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[10:24:38] [INFO] Linking shader program
+[10:24:38] [INFO] Loading texture: assets\textures\viking_room.jpg
+[10:24:38] [INFO] Loading model: assets\meshes\viking_room.obj
+[10:24:38] [INFO] Linking model
+
+[10:50:35] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[10:50:35] [INFO] Starting logging #2
+[10:50:35] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:50:37] [INFO] Application successfully initialized
+[10:50:37] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[10:50:37] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[10:50:37] [INFO] Linking shader program
+[10:50:37] [INFO] Loading texture: assets\textures\viking_room.jpg
+[10:50:37] [INFO] Loading model: assets\meshes\viking_room.obj
+[10:50:37] [INFO] Linking model
+[10:51:02] [INFO] Shutting down application...
+
+[10:52:24] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[10:52:24] [INFO] Starting logging #3
+[10:52:24] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:52:26] [INFO] Application successfully initialized
+[10:52:26] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[10:52:26] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[10:52:26] [INFO] Linking shader program
+[10:52:26] [INFO] Loading texture: assets\textures\viking_room.jpg
+[10:52:26] [INFO] Loading model: assets\meshes\viking_room.obj
+[10:52:26] [INFO] Linking model
+[10:52:29] [INFO] Shutting down application...
+
+[14:26:04] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[14:26:04] [INFO] Starting logging #4
+[14:26:04] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[14:26:06] [INFO] Application successfully initialized
+[14:26:06] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[14:26:06] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[14:26:06] [INFO] Linking shader program
+[14:26:06] [INFO] Loading texture: assets\textures\viking_room.jpg
+[14:26:06] [INFO] Loading model: assets\meshes\viking_room.obj
+[14:26:06] [INFO] Linking model
+
+[14:56:34] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[14:56:34] [INFO] Starting logging #5
+[14:56:34] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[14:56:35] [INFO] Application successfully initialized
+[14:56:35] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[14:56:35] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[14:56:35] [INFO] Linking shader program
+[14:56:35] [INFO] Loading texture: assets\textures\viking_room.jpg
+[14:56:35] [INFO] Loading model: assets\meshes\viking_room.obj
+[14:56:36] [INFO] Linking model
+
+[14:57:18] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[14:57:18] [INFO] Starting logging #6
+[14:57:18] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[14:57:19] [INFO] Application successfully initialized
+[14:57:19] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[14:57:19] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[14:57:19] [INFO] Linking shader program
+[14:57:19] [INFO] Loading texture: assets\textures\viking_room.jpg
+[14:57:19] [INFO] Loading model: assets\meshes\viking_room.obj
+[14:57:20] [INFO] Linking model
+
+[14:59:57] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[14:59:57] [INFO] Starting logging #7
+[14:59:57] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[14:59:58] [INFO] Application successfully initialized
+[14:59:58] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[14:59:58] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[14:59:58] [INFO] Linking shader program
+[14:59:58] [INFO] Loading texture: assets\textures\viking_room.jpg
+[14:59:58] [INFO] Loading model: assets\meshes\viking_room.obj
+[14:59:58] [INFO] Linking model
+
+[15:21:12] [INFO] Logging to file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\logs\2023-05-22.log
+[15:21:12] [INFO] Starting logging #8
+[15:21:12] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[15:21:13] [INFO] Application successfully initialized
+[15:21:13] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[15:21:13] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[15:21:13] [INFO] Linking shader program
+[15:21:13] [INFO] Loading texture: assets\textures\viking_room.jpg
+[15:21:13] [INFO] Loading model: assets\meshes\viking_room.obj
+[15:21:13] [INFO] Linking model
+[15:21:24] [INFO] Shutting down application...
