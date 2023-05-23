@@ -32,25 +32,25 @@ void Model::Load(const std::filesystem::path& filepath)
 
         if (line[0] == 'v')
         {
-                if (line[1] == 't')
-                {
-                    Vector2 uv;
-                    sscanf_s(line.c_str(), "vt %f %f", &uv.x, &uv.y);
-                    uvs.push_back(uv);
-                }
-                else if (line[1] == 'n')
-                {
-                    Vector3 normal;
-                    sscanf_s(line.c_str(), "vn %f %f %f", &normal.x, &normal.y, &normal.z);
-                    normals.push_back(normal);
-                }
-                else
-                {
-                    Vector3 position;
-                    sscanf_s(line.c_str(), "v %f %f %f", &position.x, &position.y, &position.z);
-                    positions.push_back(position);
-                }
-                continue;
+            if (line[1] == 't')
+            {
+                Vector2 uv;
+                sscanf_s(line.c_str(), "vt %f %f", &uv.x, &uv.y);
+                uvs.push_back(uv);
+            }
+            else if (line[1] == 'n')
+            {
+                Vector3 normal;
+                sscanf_s(line.c_str(), "vn %f %f %f", &normal.x, &normal.y, &normal.z);
+                normals.push_back(normal);
+            }
+            else
+            {
+                Vector3 position;
+                sscanf_s(line.c_str(), "v %f %f %f", &position.x, &position.y, &position.z);
+                positions.push_back(position);
+            }
+            continue;
         }
 
         // Currently doesn't support materials

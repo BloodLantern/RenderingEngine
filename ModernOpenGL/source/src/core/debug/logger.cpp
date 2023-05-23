@@ -36,12 +36,18 @@ void Logger::OpenFile(const std::filesystem::path &filename)
         return;
     }
 
-    LogInfo("Logging to file: %s", std::filesystem::absolute(filename).string().c_str());
+    LogInfo("Logging to file: %s", filename.string().c_str());
 
     // If the file already exists, add newlines to space from the last log
-    if (exists)
+    if (!exists)
+        LogInfo("Starting logging #0");
+    else
     {
+        // Write a newline to separate each log entry and use std::endl to make
+        // sure to flush it so that when we count the number of newlines, we get
+        // the correct number
         mFile << std::endl;
+
         // Read file contents to count empty lines and therefore know how many logs
         // where written in the file.
         std::ifstream in(filename);
@@ -61,8 +67,6 @@ void Logger::OpenFile(const std::filesystem::path &filename)
             LogInfo("Starting logging #%d", count - 1);
         }
     }
-    else
-        LogInfo("Starting logging #0");
 }
 
 void Logger::OpenDefaultFile()

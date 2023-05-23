@@ -69,7 +69,10 @@
     <ClCompile Include="source\src\core\object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\src\core\data_structure\graph.cpp">
+    <ClCompile Include="source\src\core\scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\src\ui\object_hierarchy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,7 +116,13 @@
     <ClInclude Include="source\include\physics\transform.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\core\data_structure\graph.hpp">
+    <ClInclude Include="source\include\core\scene.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\ui\object_hierarchy.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\ui\ui_component.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

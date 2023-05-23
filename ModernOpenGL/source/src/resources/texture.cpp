@@ -29,7 +29,7 @@ void Texture::Load(const std::filesystem::path& filepath)
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, size.x, size.y, 0, nbrChannels == 3 ? GL_RGB : GL_RGBA, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
-
+    
     stbi_image_free(data);
 
     mLoaded = true;

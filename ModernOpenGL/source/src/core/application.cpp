@@ -1,11 +1,12 @@
 #include "core/application.hpp"
 
+#include "core/object.hpp"
 #include "core/debug/logger.hpp"
 #include "resources/shader.hpp"
 #include "resources/model.hpp"
 #include "resources/texture.hpp"
 #include "resources/resource_manager.hpp"
-#include "core/object.hpp"
+#include "ui/object_hierarchy.hpp"
 
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_glfw.h>
@@ -14,6 +15,9 @@
 Application::Application()
 {
     Logger::OpenDefaultFile();
+
+    UIComponent* objectHierarchy = new ObjectHierarchy();
+    mUIComponents.push_back(objectHierarchy);
 }
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
@@ -103,6 +107,8 @@ void Application::MainLoop()
 
         mScene.Update(mDeltaTime);
         mScene.Draw();
+        for (UIComponent* component : mUIComponents)
+            component->Show(mScene);
 
         // Rendering
         ImGui::Render();
@@ -126,6 +132,9 @@ void Application::Shutdown()
 {
     Logger::LogInfo("Shutting down application...");
 
+    for (UIComponent* component : mUIComponents)
+        delete component;
+    mScene.DeleteAllObjects();
     ResourceManager::UnloadAll();
 
     // Shutdown ImGui

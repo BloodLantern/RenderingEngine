@@ -3,6 +3,8 @@
 #include "physics/transform.hpp"
 #include "low_renderer/mesh.hpp"
 
+class ObjectHierarchy;
+
 class Object
 {
 public:
@@ -24,6 +26,10 @@ public:
     void RemoveChild(Object* const o) { mChildren.erase(std::remove(mChildren.begin(), mChildren.end(), o)); }
     void RemoveAllChildren() { mChildren.clear(); }
     void ForEachChild(std::function<void(Object* const)> f) { for (Object* const child : mChildren) f(child); }
+
+    void DeleteChildren();
+
+    friend class ObjectHierarchy;
 
 private:
     Object* mParent = nullptr;

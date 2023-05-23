@@ -158,6 +158,7 @@
     <ClCompile Include="externals\src\ImGui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="externals\src\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="externals\src\stb_image.cpp" />
+    <ClCompile Include="source\src\core\scene.cpp" />
     <ClCompile Include="source\src\low_renderer\mesh.cpp" />
     <ClCompile Include="source\src\core\object.cpp" />
     <ClCompile Include="source\src\physics\transform.cpp" />
@@ -168,10 +169,12 @@
     <ClCompile Include="source\src\core\debug\logger.cpp" />
     <ClCompile Include="source\src\resources\resource_manager.cpp" />
     <ClCompile Include="source\src\main.cpp" />
+    <ClCompile Include="source\src\ui\object_hierarchy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\include\core\application.hpp" />
     <ClInclude Include="source\include\core\data_structure\vertex.hpp" />
+    <ClInclude Include="source\include\core\scene.hpp" />
     <ClInclude Include="source\include\low_renderer\mesh.hpp" />
     <ClInclude Include="source\include\core\object.hpp" />
     <ClInclude Include="source\include\physics\transform.hpp" />
@@ -183,6 +186,8 @@
     <ClInclude Include="source\include\resources\resource_manager.hpp" />
     <ClInclude Include="source\include\resources\shader.hpp" />
     <ClInclude Include="source\include\resources\texture.hpp" />
+    <ClInclude Include="source\include\ui\object_hierarchy.hpp" />
+    <ClInclude Include="source\include\ui\ui_component.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

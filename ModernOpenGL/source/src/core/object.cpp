@@ -1,5 +1,7 @@
 #include "core/object.hpp"
 
+#include <ImGui/imgui.h>
+
 Object::Object(const std::string &name)
     : name(name), transform(*this)
 {
@@ -23,6 +25,7 @@ void Object::Update(const float deltaTime)
     for (Object* const child : mChildren)
         child->Update(deltaTime);
 }
+
 void Object::Draw()
 {
     if (mesh)
@@ -30,4 +33,13 @@ void Object::Draw()
 
     for (Object* const child : mChildren)
         child->Draw();
+}
+
+void Object::DeleteChildren()
+{
+    for (Object* const child : mChildren)
+    {
+        child->DeleteChildren();
+        delete child;
+    }
 }
