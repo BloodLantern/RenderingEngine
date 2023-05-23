@@ -170,6 +170,7 @@
     <ClCompile Include="source\src\resources\resource_manager.cpp" />
     <ClCompile Include="source\src\main.cpp" />
     <ClCompile Include="source\src\ui\object_hierarchy.cpp" />
+    <ClCompile Include="source\src\ui\object_inspector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\include\core\application.hpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="source\include\resources\shader.hpp" />
     <ClInclude Include="source\include\resources\texture.hpp" />
     <ClInclude Include="source\include\ui\object_hierarchy.hpp" />
+    <ClInclude Include="source\include\ui\object_inspector.hpp" />
     <ClInclude Include="source\include\ui\ui_component.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
