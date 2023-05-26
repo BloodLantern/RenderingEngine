@@ -26,8 +26,20 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 {
     Logger::LogInfo("Initializing application with size [%d, %d] and title '%s'...", windowSize.x, windowSize.y, windowTitle);
 
-    // Initialize GLFW
-    glfwInit();
+    // Setup GLFW
+    glfwSetErrorCallback(
+        [](int error, const char* description)
+        {
+            Logger::LogError("GLFW error %d: %s", error, description);
+        }
+    );
+
+    if (!glfwInit())
+    {
+        Logger::LogFatal("Failed to initialize GLFW");
+        return;
+    }
+    
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
