@@ -1,0 +1,11 @@
+[08:50:53] [INFO] Logging to file: logs/2023-05-24.log
+[08:50:53] [INFO] Starting logging #0
+[08:50:53] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[08:50:53] [INFO] Application successfully initialized
+[08:50:53] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[08:50:53] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[08:50:53] [INFO] Linking shader program
+[08:50:53] [INFO] Loading texture: assets\textures\viking_room.jpg
+[08:50:53] [INFO] Loading model: assets\meshes\viking_room.obj
+[08:50:54] [INFO] Linking model
+[08:50:58] [INFO] Shutting down application...

@@ -159,9 +159,10 @@
     <ClCompile Include="externals\src\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="externals\src\stb_image.cpp" />
     <ClCompile Include="source\src\core\scene.cpp" />
+    <ClCompile Include="source\src\low_renderer\camera.cpp" />
     <ClCompile Include="source\src\low_renderer\mesh.cpp" />
     <ClCompile Include="source\src\core\object.cpp" />
-    <ClCompile Include="source\src\physics\transform.cpp" />
+    <ClCompile Include="source\src\core\transform.cpp" />
     <ClCompile Include="source\src\resources\texture.cpp" />
     <ClCompile Include="source\src\core\application.cpp" />
     <ClCompile Include="source\src\resources\model.cpp" />
@@ -176,9 +177,10 @@
     <ClInclude Include="source\include\core\application.hpp" />
     <ClInclude Include="source\include\core\data_structure\vertex.hpp" />
     <ClInclude Include="source\include\core\scene.hpp" />
+    <ClInclude Include="source\include\low_renderer\camera.hpp" />
     <ClInclude Include="source\include\low_renderer\mesh.hpp" />
     <ClInclude Include="source\include\core\object.hpp" />
-    <ClInclude Include="source\include\physics\transform.hpp" />
+    <ClInclude Include="source\include\core\transform.hpp" />
     <ClInclude Include="source\include\resources\model.hpp" />
     <ClInclude Include="source\include\core\data_structure\tsqueue.hpp" />
     <ClInclude Include="source\include\core\debug\assertion.hpp" />

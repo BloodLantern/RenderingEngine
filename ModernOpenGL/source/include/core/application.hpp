@@ -20,11 +20,11 @@ public:
     void Shutdown();
     
 private:
-    bool mInitialized;
-    GLFWwindow* mWindow;
+    bool mInitialized = false;
+    GLFWwindow* mWindow = nullptr;
 
     Scene mScene;
-    float mDeltaTime;
+    float mDeltaTime = 0;
 
     std::vector<UIComponent*> mUIComponents;
 };

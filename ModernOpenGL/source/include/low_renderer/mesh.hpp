@@ -4,8 +4,9 @@
 #include "resources/texture.hpp"
 #include "resources/shader.hpp"
 
-struct Mesh
+class Mesh
 {
+public:
     Model* model;
     Texture* texture;
     Shader* shader;
@@ -13,5 +14,5 @@ struct Mesh
     Mesh(Model* const model, Texture* const texture, Shader* const shader)
         : model(model), texture(texture), shader(shader) {}
 
-    void Draw();
+    void Draw(const Matrix4x4& modelViewProjection) const;
 };

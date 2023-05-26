@@ -31,6 +31,4 @@ void Texture::Load(const std::filesystem::path& filepath)
     glGenerateMipmap(GL_TEXTURE_2D);
     
     stbi_image_free(data);
-
-    mLoaded = true;
 }

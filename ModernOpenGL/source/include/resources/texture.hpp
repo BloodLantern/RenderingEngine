@@ -11,8 +11,8 @@ public:
     Texture(const std::filesystem::path& filepath) : Resource(filepath) { Load(filepath); }
     ~Texture() { Unload(); }
 
-    void Load(const std::filesystem::path& filepath) override;
-    void Unload() override { glDeleteTextures(1, &mId); }
+    void Load(const std::filesystem::path& filepath);
+    void Unload() { glDeleteTextures(1, &mId); }
 
     void Use() { glBindTexture(GL_TEXTURE_2D, mId); }
 

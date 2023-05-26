@@ -12,8 +12,8 @@ public:
     Model(const std::filesystem::path& filepath) : Resource(filepath) { Load(filepath); Link(); }
     virtual ~Model() { Unload(); }
 
-	void Load(const std::filesystem::path& filepath) override;
-	void Unload() override;
+	void Load(const std::filesystem::path& filepath);
+	void Unload();
 
     void Draw();
 

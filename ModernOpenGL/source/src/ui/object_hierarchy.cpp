@@ -4,26 +4,31 @@
 
 #include "core/scene.hpp"
 
-
 void ObjectHierarchy::Show(Scene& scene)
 {
     ImGui::Begin("Object Hierarchy");
     ShowObject(&scene.root);
+    ShowObject(&scene.camera);
     ImGui::End();
+
+    if (!selected)
+        selected = &scene.root;
 }
 
-void ObjectHierarchy::ShowObject(const Object *const object)
+void ObjectHierarchy::ShowObject(Object* const object)
 {
     int imguiFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_OpenOnArrow;
-    for (const Object* const o : object->mChildren)
-    {
-        if (o->mChildren.empty())
-            imguiFlags |= ImGuiTreeNodeFlags_Leaf;
+    const bool empty = object->mChildren.empty();
+    if (empty)
+        imguiFlags |= ImGuiTreeNodeFlags_Leaf;
 
-        if (ImGui::TreeNodeEx(o->name.c_str(), imguiFlags))
-        {
-            ShowObject(o);
-            ImGui::TreePop();
-        }
+    if (ImGui::TreeNodeEx(object->name.c_str(), imguiFlags))
+    {
+        if (ImGui::IsItemClicked())
+            selected = object;
+        if (!empty)
+            for (Object* const o : object->mChildren)
+                ShowObject(o);
+        ImGui::TreePop();
     }
 }

@@ -8,8 +8,10 @@ Shader::Shader(std::filesystem::path& folder, const std::string& vertexName, con
 {
     folder = std::filesystem::relative(folder);
 
-    LoadVertex(folder.string() + '\\' + vertexName + ".vs");
-    LoadFragment(folder.string() + '\\' + fragmentName + ".fs");
+    if (!LoadVertex(folder.string() + '\\' + vertexName + ".vs"))
+        return;
+    if (!LoadFragment(folder.string() + '\\' + fragmentName + ".fs"))
+        return;
 
     Link();
 }
@@ -34,11 +36,8 @@ bool Shader::LoadFragment(const std::filesystem::path& filepath)
 
 bool Shader::LoadShader(const std::filesystem::path &filepath, unsigned int& shader, const ShaderType type)
 {
-    Load(filepath);
-
-    if (!mLoaded)
+    if (!Load(filepath))
         return false;
-    mLoaded = false;
 
     GLenum shaderType = 0;
     switch (type)
@@ -70,24 +69,23 @@ bool Shader::LoadShader(const std::filesystem::path &filepath, unsigned int& sha
     return true;
 }
 
-void Shader::Load(const std::filesystem::path &filepath)
+bool Shader::Load(const std::filesystem::path &filepath)
 {
     std::ifstream file(filepath);
 
     if (!file.is_open() || !file.good())
     {
         Logger::LogError("Could not open shader file: %s", std::filesystem::absolute(filepath).string().c_str());
-        return;
+        return false;
     }
 
     mSource = std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-    mLoaded = true;
+    return true;
 }
 
 void Shader::Unload()
 {
     mSource = "";
-    mLoaded = false;
     
     Unload(mVertex);
     Unload(mFragment);

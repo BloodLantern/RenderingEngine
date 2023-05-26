@@ -7,8 +7,10 @@ class Object;
 class ObjectHierarchy : public UIComponent
 {
 public:
+    Object* selected;
+
     virtual void Show(Scene& scene) override;
 
 private:
-    void ShowObject(const Object* const object);
+    void ShowObject(Object* const object);
 };

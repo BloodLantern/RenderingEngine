@@ -18,8 +18,6 @@ void Model::Load(const std::filesystem::path& filepath)
         return;
     }
 
-    mLoaded = true;
-
     std::vector<Vector3> positions, normals;
     std::vector<Vector2> uvs;
 
@@ -78,7 +76,6 @@ void Model::Unload()
 {
     mVertices.clear();
     mIndices.clear();
-    mLoaded = false;
 
     if (mLinked)
     {
@@ -92,7 +89,6 @@ void Model::Unload()
 void Model::Draw()
 {
     glBindVertexArray(mVAO);
-    Logger::Synchronize();
     glDrawArrays(GL_TRIANGLES, 0, (int) mVertices.size());
 }
 

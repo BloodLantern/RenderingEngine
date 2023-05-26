@@ -13,7 +13,7 @@ Object::Object(Mesh *const mesh, const std::string &name)
 }
 
 Object::~Object()
-{ 
+{
     if (mParent)
         std::erase(mParent->mChildren, this);
 }
@@ -26,13 +26,15 @@ void Object::Update(const float deltaTime)
         child->Update(deltaTime);
 }
 
-void Object::Draw()
+void Object::Draw(const Matrix4x4& viewProjectionMatrix)
 {
     if (mesh)
-        mesh->Draw();
+    {
+        mesh->Draw(viewProjectionMatrix * transform.mGlobal);
+    }
 
     for (Object* const child : mChildren)
-        child->Draw();
+        child->Draw(viewProjectionMatrix);
 }
 
 void Object::DeleteChildren()

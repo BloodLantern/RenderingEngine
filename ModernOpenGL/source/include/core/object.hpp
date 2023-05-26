@@ -1,23 +1,23 @@
 #pragma once
 
-#include "physics/transform.hpp"
+#include "core/transform.hpp"
 #include "low_renderer/mesh.hpp"
-
-class ObjectHierarchy;
 
 class Object
 {
+    friend class ObjectHierarchy;
+
 public:
     std::string name;
     Transform transform;
-    Mesh* mesh;
+    Mesh* mesh = nullptr;
 
     Object(const std::string& name = "");
-    Object(Mesh* const mesh = nullptr, const std::string& name = "");
+    Object(Mesh* const mesh, const std::string& name = "");
     ~Object();
 
-    void Update(const float deltaTime);
-    void Draw();
+    virtual void Update(const float deltaTime);
+    void Draw(const Matrix4x4& viewProjectionMatrix);
 
     void SetParent(Object* const o) { mParent = o; }
 
@@ -28,8 +28,6 @@ public:
     void ForEachChild(std::function<void(Object* const)> f) { for (Object* const child : mChildren) f(child); }
 
     void DeleteChildren();
-
-    friend class ObjectHierarchy;
 
 private:
     Object* mParent = nullptr;

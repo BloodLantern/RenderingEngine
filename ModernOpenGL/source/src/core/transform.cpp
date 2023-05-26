@@ -1,13 +1,6 @@
-#include "physics/transform.hpp"
+#include "core/transform.hpp"
 
 #include "core/object.hpp"
-
-Transform::~Transform()
-{
-
-    /*for (Transform* child : mChildren)
-        delete child;*/
-}
 
 void Transform::Update(const Transform* parent)
 {

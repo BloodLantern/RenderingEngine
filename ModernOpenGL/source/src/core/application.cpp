@@ -7,6 +7,7 @@
 #include "resources/texture.hpp"
 #include "resources/resource_manager.hpp"
 #include "ui/object_hierarchy.hpp"
+#include "ui/object_inspector.hpp"
 
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_glfw.h>
@@ -16,8 +17,9 @@ Application::Application()
 {
     Logger::OpenDefaultFile();
 
-    UIComponent* objectHierarchy = new ObjectHierarchy();
+    ObjectHierarchy* objectHierarchy = new ObjectHierarchy();
     mUIComponents.push_back(objectHierarchy);
+    mUIComponents.push_back(new ObjectInspector(&objectHierarchy->selected));
 }
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
@@ -77,7 +79,7 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
     // Setup Platform/Renderer bindings
     ImGui_ImplGlfw_InitForOpenGL(mWindow, true);
-    ImGui_ImplOpenGL3_Init("#version 460");
+    ImGui_ImplOpenGL3_Init("#version 330");
 
     Logger::LogInfo("Application successfully initialized");
 
@@ -141,6 +143,7 @@ void Application::Shutdown()
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
+    
 
 	glfwDestroyWindow(mWindow);
     glfwTerminate();

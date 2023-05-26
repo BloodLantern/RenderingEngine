@@ -33,7 +33,6 @@ public:
 
     void Use() const { glUseProgram(mProgram); }
 
-    inline unsigned int GetUniform(const std::string& name) const { return glGetUniformLocation(mProgram, name.c_str()); }
     inline void SetUniform(const std::string& name, const bool value) const { SetUniform(name, (int) value); }
     inline void SetUniform(const std::string& name, const int value) const { glUniform1i(GetUniform(name), value); }
     inline void SetUniform(const std::string& name, const float value) const { glUniform1f(GetUniform(name), value); }
@@ -52,7 +51,9 @@ private:
     bool LoadShader(const std::filesystem::path& filepath, unsigned int& shader, const ShaderType type);
 
     // Load shader source
-    void Load(const std::filesystem::path& filepath) override;
-    void Unload() override;
+    bool Load(const std::filesystem::path& filepath);
+    void Unload();
     void Unload(unsigned int& shader);
+    
+    inline unsigned int GetUniform(const std::string& name) const { return glGetUniformLocation(mProgram, name.c_str()); }
 };
