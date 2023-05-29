@@ -60,7 +60,7 @@
     <ClCompile Include="source\src\resources\texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\src\core\transform.cpp">
+    <ClCompile Include="source\src\core\data_structure\transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\src\low_renderer\mesh.cpp">
@@ -79,6 +79,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\src\low_renderer\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\src\core\input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -119,7 +122,7 @@
     <ClInclude Include="source\include\core\object.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\core\transform.hpp">
+    <ClInclude Include="source\include\core\data_structure\transform.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\include\core\scene.hpp">
@@ -135,6 +138,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\include\low_renderer\camera.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\core\input.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\core\input_constants.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

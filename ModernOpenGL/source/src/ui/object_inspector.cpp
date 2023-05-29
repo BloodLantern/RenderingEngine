@@ -7,7 +7,7 @@
 #include "core/object.hpp"
 #include "low_renderer/camera.hpp"
 
-void ObjectInspector::Show(Scene &scene)
+void ObjectInspector::Show(Scene&)
 {
     Object* const object = *mObject;
     ImGui::Begin("Object Inspector");
@@ -23,7 +23,7 @@ void ObjectInspector::Show(Scene &scene)
 
         ImGui::Text("\tPosition:  ");
         ImGui::SameLine();
-        ImGui::InputFloat3("##0", &object->transform.position.x);
+        ImGui::SliderFloat3("##0", &object->transform.position.x, -10, 10);
 
         ImGui::Text("\tRotation X:");
         ImGui::SameLine();
@@ -37,7 +37,7 @@ void ObjectInspector::Show(Scene &scene)
 
         ImGui::Text("\tScale:     ");
         ImGui::SameLine();
-        ImGui::InputFloat3("##4", &object->transform.scale.x);
+        ImGui::SliderFloat3("##4", &object->transform.scale.x, -5, 5);
 
         if (Camera* camera = dynamic_cast<Camera*>(object))
         {
@@ -46,7 +46,7 @@ void ObjectInspector::Show(Scene &scene)
 
             ImGui::Text("\tFOV:    ");
             ImGui::SameLine();
-            ImGui::InputFloat("##5", &camera->fov);
+            ImGui::SliderFloat("##5", &camera->fov, 30, 120);
 
             ImGui::Text("\tNear:   ");
             ImGui::SameLine();
@@ -55,9 +55,20 @@ void ObjectInspector::Show(Scene &scene)
             ImGui::SameLine();
             ImGui::InputFloat("##7", &camera->far);
 
-            ImGui::Text("\tLook At:");
+            ImGui::Text("\tIs looking at:");
             ImGui::SameLine();
-            ImGui::InputFloat3("##8", &camera->lookAt.x);
+            ImGui::Checkbox("##8", &camera->isLookingAt);
+            if (camera->isLookingAt)
+            {
+                ImGui::Text("\tLook at:");
+                ImGui::SameLine();
+                ImGui::SliderFloat3("##9", &camera->lookingAt.x, -10, 10);
+            }
+            else
+            {
+                Vector3 effectiveLookAt = camera->GetEffectiveLookAt();
+                ImGui::Text("\tLooking at: %.3f, %.3f, %.3f", effectiveLookAt.x, effectiveLookAt.y, effectiveLookAt.z);
+            }
         }
     }
     ImGui::End();

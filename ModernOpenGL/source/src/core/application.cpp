@@ -1,6 +1,7 @@
 #include "core/application.hpp"
 
 #include "core/object.hpp"
+#include "core/input.hpp"
 #include "core/debug/logger.hpp"
 #include "resources/shader.hpp"
 #include "resources/model.hpp"
@@ -12,6 +13,8 @@
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_glfw.h>
 #include <ImGui/imgui_impl_opengl3.h>
+
+#include <numbers>
 
 Application::Application()
 {
@@ -37,7 +40,7 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
     if (!glfwInit())
     {
         Logger::LogFatal("Failed to initialize GLFW");
-        return;
+        return false;
     }
     
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -67,8 +70,6 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
     glfwSetFramebufferSizeCallback(mWindow, [] (GLFWwindow*, int width, int height) { glViewport(0, 0, width, height); });
     glViewport(0, 0, windowSize.x, windowSize.y);
 
-	glfwShowWindow(mWindow);
-
     glClearColor(0.45f, 0.55f, 0.60f, 1.00f);
 
     // Enable depth test
@@ -82,6 +83,7 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
+    io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable keyboard controls
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;     // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;   // Enable viewports
     io.Fonts->AddFontDefault();
@@ -97,11 +99,16 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
     Object* object = new Object("Viking room");
     object->mesh = new Mesh(
-        ResourceManager::Load<Model>("assets\\meshes\\viking_room.obj"),
-        ResourceManager::Load<Texture>("assets\\textures\\viking_room.jpg"),
-        ResourceManager::Load<Shader>("source\\shaders")
+        ResourceManager::Load<Model>("assets/meshes/viking_room.obj"),
+        ResourceManager::Load<Texture>("assets/textures/viking_room.jpg"),
+        ResourceManager::Load<Shader>("source/shaders")
     );
+    object->transform.rotation.x = -std::numbers::pi_v<float> / 2;
     mScene.root.AddChild(object);
+
+    Input::Initialize(mWindow);
+
+    glfwShowWindow(mWindow);
 
     return true;
 }
@@ -118,6 +125,8 @@ void Application::MainLoop()
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
+
+        Input::Update();
 
         mScene.Update(mDeltaTime);
         mScene.Draw();

@@ -34,6 +34,8 @@ void Model::Load(const std::filesystem::path& filepath)
             {
                 Vector2 uv;
                 sscanf_s(line.c_str(), "vt %f %f", &uv.x, &uv.y);
+                // OpenGL bad
+                uv.y = 1.f - uv.y;
                 uvs.push_back(uv);
             }
             else if (line[1] == 'n')
