@@ -18,6 +18,8 @@ public:
     bool Initialize(const Vector2i windowSize, const char* const windowTitle);
     void MainLoop();
     void Shutdown();
+
+    void ShowDebugWindow();
     
 private:
     bool mInitialized = false;

@@ -18,7 +18,9 @@ namespace inputs
     constexpr unsigned char MouseButton_Right = GLFW_MOUSE_BUTTON_RIGHT;
     constexpr unsigned char MouseButton_Middle = GLFW_MOUSE_BUTTON_MIDDLE;
 
-    constexpr unsigned char MouseButton_MaxCount = GLFW_MOUSE_BUTTON_LAST + 1;
+    constexpr unsigned char MouseButton_First = MouseButton_1;
+    constexpr unsigned char MouseButton_Last = MouseButton_8;
+    constexpr unsigned char MouseButton_MaxCount = 8;
 #pragma endregion
 
 #pragma region KeyButtons
@@ -148,26 +150,28 @@ namespace inputs
     constexpr unsigned short KeyboardKey_Up = GLFW_KEY_UP;
     constexpr unsigned short KeyboardKey_Down = GLFW_KEY_DOWN;
 
-    constexpr unsigned short KeyboardKey_MaxCount = GLFW_KEY_LAST + 1;
+    constexpr unsigned short KeyboardKey_First = KeyboardKey_0;
+    constexpr unsigned short KeyboardKey_Last = KeyboardKey_Down;
+    constexpr unsigned short KeyboardKey_MaxCount = 118;
 #pragma endregion
 
 #pragma region Controller
-    constexpr unsigned char Controller_1 = GLFW_JOYSTICK_1;
-    constexpr unsigned char Controller_2 = GLFW_JOYSTICK_2;
-    constexpr unsigned char Controller_3 = GLFW_JOYSTICK_3;
-    constexpr unsigned char Controller_4 = GLFW_JOYSTICK_4;
-    constexpr unsigned char Controller_5 = GLFW_JOYSTICK_5;
-    constexpr unsigned char Controller_6 = GLFW_JOYSTICK_6;
-    constexpr unsigned char Controller_7 = GLFW_JOYSTICK_7;
-    constexpr unsigned char Controller_8 = GLFW_JOYSTICK_8;
-    constexpr unsigned char Controller_9 = GLFW_JOYSTICK_9;
-    constexpr unsigned char Controller_10 = GLFW_JOYSTICK_10;
-    constexpr unsigned char Controller_11 = GLFW_JOYSTICK_11;
-    constexpr unsigned char Controller_12 = GLFW_JOYSTICK_12;
-    constexpr unsigned char Controller_13 = GLFW_JOYSTICK_13;
-    constexpr unsigned char Controller_14 = GLFW_JOYSTICK_14;
-    constexpr unsigned char Controller_15 = GLFW_JOYSTICK_15;
-    constexpr unsigned char Controller_16 = GLFW_JOYSTICK_16;
+    constexpr unsigned char Controller_0 = GLFW_JOYSTICK_1;
+    constexpr unsigned char Controller_1 = GLFW_JOYSTICK_2;
+    constexpr unsigned char Controller_2 = GLFW_JOYSTICK_3;
+    constexpr unsigned char Controller_3 = GLFW_JOYSTICK_4;
+    constexpr unsigned char Controller_4 = GLFW_JOYSTICK_5;
+    constexpr unsigned char Controller_5 = GLFW_JOYSTICK_6;
+    constexpr unsigned char Controller_6 = GLFW_JOYSTICK_7;
+    constexpr unsigned char Controller_7 = GLFW_JOYSTICK_8;
+    constexpr unsigned char Controller_8 = GLFW_JOYSTICK_9;
+    constexpr unsigned char Controller_9 = GLFW_JOYSTICK_10;
+    constexpr unsigned char Controller_10 = GLFW_JOYSTICK_11;
+    constexpr unsigned char Controller_11 = GLFW_JOYSTICK_12;
+    constexpr unsigned char Controller_12 = GLFW_JOYSTICK_13;
+    constexpr unsigned char Controller_13 = GLFW_JOYSTICK_14;
+    constexpr unsigned char Controller_14 = GLFW_JOYSTICK_15;
+    constexpr unsigned char Controller_15 = GLFW_JOYSTICK_16;
 
     constexpr unsigned char Controller_StickLeft = 0;
     constexpr unsigned char Controller_StickRight = 1;
@@ -186,22 +190,19 @@ namespace inputs
     constexpr unsigned char Controller_ButtonSonyR2 = 7; // Right trigger. True when the trigger axis is greater than -1 (default value).
     constexpr unsigned char Controller_ButtonSonyShare = 8;
     constexpr unsigned char Controller_ButtonSonyOptions = 9;
-    constexpr unsigned char Controller_ButtonSonyHome = 10; // Sony button.
-    constexpr unsigned char Controller_ButtonSonyTouchPad = 11; // Touch pad press.
-    constexpr unsigned char Controller_ButtonSonyL3 = 12; // Left stick press.
-    constexpr unsigned char Controller_ButtonSonyR3 = 13; // Right stick press.
+    constexpr unsigned char Controller_ButtonSonyL3 = 10; // Left stick press.
+    constexpr unsigned char Controller_ButtonSonyR3 = 11; // Right stick press.
+    constexpr unsigned char Controller_ButtonSonyHome = 12; // Sony button.
+    constexpr unsigned char Controller_ButtonSonyTouchPad = 13; // Touch pad press.
     
-    constexpr unsigned char Controller_ButtonMicrosoftX = Controller_ButtonSonySquare;
     constexpr unsigned char Controller_ButtonMicrosoftA = Controller_ButtonSonyCross;
     constexpr unsigned char Controller_ButtonMicrosoftB = Controller_ButtonSonyCircle;
+    constexpr unsigned char Controller_ButtonMicrosoftX = Controller_ButtonSonySquare;
     constexpr unsigned char Controller_ButtonMicrosoftY = Controller_ButtonSonyTriangle;
     constexpr unsigned char Controller_ButtonMicrosoftLeftBumper = Controller_ButtonSonyL1; // Button above the left trigger.
     constexpr unsigned char Controller_ButtonMicrosoftRightBumper = Controller_ButtonSonyR1; // Button above the right trigger.
-    constexpr unsigned char Controller_ButtonMicrosoftLeftTrigger = Controller_ButtonSonyL2; // Left trigger. True when the trigger axis is greater than -1 (default value).
-    constexpr unsigned char Controller_ButtonMicrosoftRightTrigger = Controller_ButtonSonyR2; // Right trigger. True when the trigger axis is greater than -1 (default value).
     constexpr unsigned char Controller_ButtonMicrosoftBack = Controller_ButtonSonyShare;
     constexpr unsigned char Controller_ButtonMicrosoftStart = Controller_ButtonSonyOptions;
-    constexpr unsigned char Controller_ButtonMicrosoftGuide = Controller_ButtonSonyHome; // Microsoft button.
     constexpr unsigned char Controller_ButtonMicrosoftLeftStick = Controller_ButtonSonyL3; // Left stick press.
     constexpr unsigned char Controller_ButtonMicrosoftRightStick = Controller_ButtonSonyR3; // Right stick press.
     
@@ -233,8 +234,17 @@ namespace inputs
 
     constexpr unsigned char Controller_StickCount = 2;
     constexpr unsigned char Controller_TriggerCount = 2;
+
+    constexpr unsigned char Controller_ButtonSonyFirst = Controller_ButtonSonySquare;
+    constexpr unsigned char Controller_ButtonSonyLast = Controller_ButtonSonyTouchPad;
+    constexpr unsigned char Controller_ButtonMicrosoftFirst = Controller_ButtonMicrosoftA;
+    constexpr unsigned char Controller_ButtonMicrosoftLast = Controller_ButtonMicrosoftRightStick;
+    constexpr unsigned char Controller_ButtonNintendoFirst = Controller_ButtonNintendoY;
+    constexpr unsigned char Controller_ButtonNintendoLast = Controller_ButtonNintendoRightStick;
     constexpr unsigned char Controller_ButtonCount = 14;
 
-    constexpr unsigned char Controller_MaxCount = GLFW_JOYSTICK_LAST + 1;
+    constexpr unsigned char Controller_First = Controller_0;
+    constexpr unsigned char Controller_Last = Controller_15;
+    constexpr unsigned char Controller_MaxCount = 16;
 #pragma endregion
 }

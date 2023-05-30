@@ -46,29 +46,36 @@ void ObjectInspector::Show(Scene&)
 
             ImGui::Text("\tFOV:    ");
             ImGui::SameLine();
-            ImGui::SliderFloat("##5", &camera->fov, 30, 120);
+            ImGui::SliderAngle("##5", &camera->fov, 30, 120);
+            ImGui::Text("\tSensitivity:    ");
+            ImGui::SameLine();
+            ImGui::SliderFloat("##6", &camera->sensitivity, 1, 15);
 
             ImGui::Text("\tNear:   ");
             ImGui::SameLine();
-            ImGui::InputFloat("##6", &camera->near);
+            ImGui::InputFloat("##7", &camera->near);
             ImGui::Text("\tFar:    ");
             ImGui::SameLine();
-            ImGui::InputFloat("##7", &camera->far);
+            ImGui::InputFloat("##8", &camera->far);
 
             ImGui::Text("\tIs looking at:");
             ImGui::SameLine();
-            ImGui::Checkbox("##8", &camera->isLookingAt);
+            ImGui::Checkbox("##9", &camera->isLookingAt);
             if (camera->isLookingAt)
             {
                 ImGui::Text("\tLook at:");
                 ImGui::SameLine();
-                ImGui::SliderFloat3("##9", &camera->lookingAt.x, -10, 10);
+                ImGui::SliderFloat3("##10", &camera->lookingAt.x, -10, 10);
             }
             else
             {
-                Vector3 effectiveLookAt = camera->GetEffectiveLookAt();
-                ImGui::Text("\tLooking at: %.3f, %.3f, %.3f", effectiveLookAt.x, effectiveLookAt.y, effectiveLookAt.z);
+                Vector3 forward = camera->GetForward();
+                ImGui::Text("\tForward: %.3f, %.3f, %.3f", forward.x, forward.y, forward.z);
             }
+
+            ImGui::Text("\tHide cursor:  ");
+            ImGui::SameLine();
+            ImGui::Checkbox("##11", &camera->hideCursor);
         }
     }
     ImGui::End();

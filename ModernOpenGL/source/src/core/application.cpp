@@ -128,10 +128,15 @@ void Application::MainLoop()
 
         Input::Update();
 
+        if (!mScene.camera.hideCursor && Input::keyboardKeyDown[inputs::KeyboardKey_Escape])
+            break;
+
         mScene.Update(mDeltaTime);
         mScene.Draw();
         for (UIComponent* component : mUIComponents)
             component->Show(mScene);
+
+        ShowDebugWindow();
 
         // Rendering
         ImGui::Render();
@@ -170,4 +175,65 @@ void Application::Shutdown()
     glfwTerminate();
 
     Logger::Stop();
+}
+
+void Application::ShowDebugWindow()
+{
+    static bool showInputs = false;
+
+    ImGui::Begin("Debug");
+    ImGui::Checkbox("Show inputs", &showInputs);
+    ImGui::End();
+
+    if (showInputs)
+    {
+        ImGui::Begin("Inputs");
+        if (ImGui::TreeNode("Mouse"))
+        {
+            ImGui::Text("Position: %d, %d", Input::mousePosition.x, Input::mousePosition.y);
+            ImGui::Text("Button down right: %d", Input::mouseDown[inputs::MouseButton_Right]);
+            ImGui::Text("Button release right: %d", Input::mouseRelease[inputs::MouseButton_Right]);
+            for (unsigned char i = 0; i < inputs::MouseButton_MaxCount; i++)
+            {
+                ImGui::Text("Button down %d: %d", i + 1, Input::mouseDown[i]);
+                ImGui::Text("Button release %d: %d", i + 1, Input::mouseRelease[i]);
+            }
+            ImGui::Text("Wheel: %f, %f", Input::mouseWheel.x, Input::mouseWheel.y);
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Keyboard"))
+        {
+            ImGui::Text("Key down B: %d", Input::keyboardKeyDown[inputs::KeyboardKey_B]);
+            ImGui::Text("Key release B: %d", Input::keyboardKeyRelease[inputs::KeyboardKey_B]);
+            ImGui::TreePop();
+        }
+
+        ImGui::Text("Controllers connected: %u", Input::controllerConnectedCount);
+        for (unsigned char i = 0; i < Input::controllerConnectedCount; i++)
+        {
+            char nameBuffer[14];
+            sprintf_s(nameBuffer, "Controller %u", i + 1);
+            if (ImGui::TreeNode(nameBuffer))
+            {
+                ImGui::Text("Left stick axis: %f, %f",
+                    Input::controllerStickAxis[i][inputs::Controller_StickLeft].x,
+                    Input::controllerStickAxis[i][inputs::Controller_StickLeft].y);
+                ImGui::Text("Right stick axis: %f, %f",
+                    Input::controllerStickAxis[i][inputs::Controller_StickRight].x,
+                    Input::controllerStickAxis[i][inputs::Controller_StickRight].y);
+
+                ImGui::Text("Left trigger axis: %f", Input::controllerTriggerAxis[i][inputs::Controller_TriggerLeft]);
+                ImGui::Text("Right trigger axis: %f", Input::controllerTriggerAxis[i][inputs::Controller_TriggerRight]);
+
+                for (unsigned char j = 0; j < inputs::Controller_ButtonCount; j++)
+                    ImGui::Text("Button down %d: %d", j + 1, Input::controllerButtonDown[i][j]);
+
+                ImGui::Text("Directional pad direction: %u", Input::controllerDirectionalPad[i]);
+
+                ImGui::TreePop();
+            }
+        }
+        ImGui::End();
+    }
 }

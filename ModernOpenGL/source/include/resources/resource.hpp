@@ -5,7 +5,7 @@
 class Resource
 {
 public:
-    Resource() {}
+    Resource() = default;
     Resource(const std::filesystem::path&) {}
     virtual ~Resource() {}
 };
