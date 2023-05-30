@@ -23,6 +23,9 @@ unsigned char Input::controllerDirectionalPad[inputs::Controller_MaxCount];
 
 GLFWwindow* Input::mWindow = nullptr;
 
+bool newMouseDown[inputs::MouseButton_MaxCount];
+bool newKeyboardKeyDown[inputs::KeyboardKey_MaxCount];
+
 void MousePositionCallback(GLFWwindow*, double x, double y)
 {
     Input::mousePosition = Vector2i((int) x, (int) y);
@@ -30,8 +33,7 @@ void MousePositionCallback(GLFWwindow*, double x, double y)
 
 void MouseButtonCallback(GLFWwindow*, int button, int action, int)
 {
-    if (action == GLFW_PRESS)
-        Input::mouseDown[button] = true;
+    newMouseDown[button] = action == GLFW_PRESS;
 }
 
 void MouseScrollCallback(GLFWwindow*, double xoffset, double yoffset)
@@ -45,8 +47,7 @@ void KeyCallback(GLFWwindow*, int key, int, int action, int)
     if (key == GLFW_KEY_UNKNOWN)
         return;
 
-    if (action == GLFW_PRESS)
-        Input::keyboardKeyDown[key] = true;
+    newKeyboardKeyDown[key] = action == GLFW_PRESS;
 }
 
 void JoystickCallback(int jid, int event)
@@ -73,15 +74,24 @@ void Input::Initialize(GLFWwindow *const window)
     mWindow = window;
 
     glfwSetCursorPosCallback(window, MousePositionCallback);
+    glfwSetMouseButtonCallback(window, MouseButtonCallback);
     glfwSetScrollCallback(window, MouseScrollCallback);
+
+    glfwSetKeyCallback(window, KeyCallback);
 
     glfwSetJoystickCallback(JoystickCallback);
 
     for (unsigned int i = 0; i < inputs::MouseButton_MaxCount; i++)
+    {
         mouseDown[i] = false;
+        newMouseDown[i] = false;
+    }
 
     for (unsigned int i = 0; i < inputs::KeyboardKey_MaxCount; i++)
+    {
         keyboardKeyDown[i] = false;
+        newKeyboardKeyDown[i] = false;
+    }
 
     // Count connected controllers
     for (unsigned int i = 0; i < inputs::Controller_MaxCount; i++)
@@ -103,20 +113,18 @@ void Input::Update()
 {
     for (unsigned int i = inputs::MouseButton_First; i < inputs::MouseButton_MaxCount; i++)
     {
-        const bool newMouseButtonDown = glfwGetMouseButton(mWindow, i) == GLFW_PRESS;
-        mouseRelease[i] = mouseDown[i] && !newMouseButtonDown;
-        mousePress[i] = !mouseDown[i] && newMouseButtonDown;
-        mouseDown[i] = newMouseButtonDown;
+        mouseRelease[i] = mouseDown[i] && !newMouseDown[i];
+        mousePress[i] = !mouseDown[i] && newMouseDown[i];
+        mouseDown[i] = newMouseDown[i];
     }
     mouseWheel = 0;
 
-    /*for (unsigned int i = 0; i < inputs::KeyboardKey_MaxCount; i++)
+    for (unsigned int i = 0; i < inputs::KeyboardKey_MaxCount; i++)
     {
-        const bool newKeyboardKeyDown = glfwGetKey(mWindow, inputs::KeyboardKey_First + i) == GLFW_PRESS;
-        keyboardKeyRelease[i] = keyboardKeyDown[i] && !newKeyboardKeyDown;
-        keyboardKeyPress[i] = !keyboardKeyDown[i] && newKeyboardKeyDown;
-        keyboardKeyDown[i] = newKeyboardKeyDown;
-    }*/
+        keyboardKeyRelease[i] = keyboardKeyDown[i] && !newKeyboardKeyDown[i];
+        keyboardKeyPress[i] = !keyboardKeyDown[i] && newKeyboardKeyDown[i];
+        keyboardKeyDown[i] = newKeyboardKeyDown[i];
+    }
 
     for (unsigned int i = 0; i < inputs::Controller_MaxCount; i++)
         if (controllerConnected[i])
