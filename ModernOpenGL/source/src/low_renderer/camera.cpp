@@ -8,7 +8,7 @@ void Camera::Update(const float deltaTime)
 
     Input::SetCursorHidden(hideCursor);
 
-    if (hideCursor && Input::keyboardKeyDown[inputs::KeyboardKey_Escape])
+    if (hideCursor && Input::keyboardKeyPress[inputs::KeyboardKey_Escape])
         hideCursor = false;
 
     const float speed = moveSpeed * deltaTime;

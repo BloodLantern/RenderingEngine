@@ -128,7 +128,7 @@ void Application::MainLoop()
 
         Input::Update();
 
-        if (!mScene.camera.hideCursor && Input::keyboardKeyDown[inputs::KeyboardKey_Escape])
+        if (!mScene.camera.hideCursor && Input::keyboardKeyPress[inputs::KeyboardKey_Escape])
             break;
 
         mScene.Update(mDeltaTime);

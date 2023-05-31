@@ -152,7 +152,7 @@ namespace inputs
 
     constexpr unsigned short KeyboardKey_First = KeyboardKey_0;
     constexpr unsigned short KeyboardKey_Last = KeyboardKey_Down;
-    constexpr unsigned short KeyboardKey_MaxCount = 118;
+    constexpr unsigned short KeyboardKey_MaxCount = GLFW_KEY_LAST + 1;
 #pragma endregion
 
 #pragma region Controller
