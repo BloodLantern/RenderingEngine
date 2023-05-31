@@ -6,13 +6,13 @@ void Camera::Update(const float deltaTime)
 {
     Object::Update(deltaTime);
 
-    Input::SetCursorHidden(hideCursor);
+    Input::SetCursorHidden(fpsView);
 
-    if (hideCursor && Input::keyboardKeyPress[inputs::KeyboardKey_Escape])
-        hideCursor = false;
+    if (fpsView && Input::keyboardKeyPress[inputs::KeyboardKey_Escape])
+        fpsView = false;
 
-    const float speed = moveSpeed * deltaTime;
-    const float effectiveSensitivity = sensitivity * deltaTime;
+    const float effectiveSpeed = moveSpeed * deltaTime;
+    Vector3 movement;
 
     if (Input::controllerConnected[inputs::Controller_0])
     {
@@ -21,45 +21,87 @@ void Camera::Update(const float deltaTime)
         const bool* const& buttons = Input::controllerButtonDown[inputs::Controller_0];
 
         const Vector2 leftStick = sticks[inputs::Controller_StickLeft];
-        const Vector3 movementForward = Vector3(mForward.x, 0, mForward.z).Normalized();
-        transform.position -= movementForward * -leftStick.y * speed;
-        transform.position -= movementForward.Cross(Vector3::UnitY()).Normalized() * leftStick.x * speed;
+        movement = mForward * leftStick.y;
+        movement -= mRight * leftStick.x;
 
+        const float effectiveStickSensitivity = stickSensitivity / 100;
         const Vector2 rightStick = sticks[inputs::Controller_StickRight];
-        transform.rotation.x += -rightStick.x * effectiveSensitivity;
+        transform.rotation.x -= rightStick.x * effectiveStickSensitivity;
         transform.rotation.y = std::clamp(
-            transform.rotation.y + rightStick.y * effectiveSensitivity,
+            transform.rotation.y + rightStick.y * effectiveStickSensitivity,
             -(std::numbers::pi_v<float> / 2) + std::numbers::pi_v<float> / 180,
             std::numbers::pi_v<float> / 2 - std::numbers::pi_v<float> / 180
         );
 
         fov = std::clamp(
             fov + (triggers[inputs::Controller_TriggerLeft] - triggers[inputs::Controller_TriggerRight])
-                * effectiveSensitivity,
+                * effectiveStickSensitivity,
             std::numbers::pi_v<float> / 6,
-            std::numbers::pi_v<float> / 1.5f
+            std::numbers::pi_v<float> / 2
         );
 
         if (buttons[inputs::Controller_ButtonSonyCross])
-            transform.position += Vector3::UnitY() * speed;
+            transform.position += Vector3::UnitY() * effectiveSpeed;
         if (buttons[inputs::Controller_ButtonSonyCircle])
-            transform.position -= Vector3::UnitY() * speed;
+            transform.position -= Vector3::UnitY() * effectiveSpeed;
 
         isLookingAt = buttons[inputs::Controller_ButtonSonyR1];
+
+        // FIXME: Use button press instead
+        if (Input::controllerButtonDown[inputs::Controller_0][inputs::Controller_ButtonSonyL3])
+            mRunning = true;
     }
+
+    if (Input::keyboardKeyDown[inputs::KeyboardKey_W])
+        movement += mForward;
+    if (Input::keyboardKeyDown[inputs::KeyboardKey_S])
+        movement -= mForward;
+    if (Input::keyboardKeyDown[inputs::KeyboardKey_A])
+        movement += mRight;
+    if (Input::keyboardKeyDown[inputs::KeyboardKey_D])
+        movement -= mRight;
+    if (Input::keyboardKeyDown[inputs::KeyboardKey_Space])
+        transform.position += Vector3::UnitY() * effectiveSpeed;
+    if (Input::keyboardKeyDown[inputs::KeyboardKey_LeftShift])
+        transform.position -= Vector3::UnitY() * effectiveSpeed;
+        
+    if (Input::keyboardKeyPress[inputs::KeyboardKey_LeftControl])
+        mRunning = true;
+
+    movement.y = 0;
+    if (movement == 0)
+        mRunning = false;
+    else
+        transform.position += movement.Normalized() * effectiveSpeed * (mRunning ? 2 : 1);
+
+    if (fpsView)
+    {
+        const float effectiveMouseSensitivity = mouseSensitivity / 1000;
+        const Vector2i mouseDelta = lastMousePosition - Input::mousePosition;
+        transform.rotation.x += mouseDelta.x * effectiveMouseSensitivity;
+        transform.rotation.y = std::clamp(
+                transform.rotation.y + mouseDelta.y * effectiveMouseSensitivity,
+                -(std::numbers::pi_v<float> / 2) + std::numbers::pi_v<float> / 180,
+                std::numbers::pi_v<float> / 2 - std::numbers::pi_v<float> / 180
+            );
+        lastMousePosition = Input::mousePosition;
+
+        fov = std::clamp(
+            fov - Input::mouseWheel.y * 10 * std::numbers::pi_v<float> / 180,
+            std::numbers::pi_v<float> / 6,
+            std::numbers::pi_v<float> / 2
+        );
+    }
+
+    transform.rotation.x = std::fmod(
+            transform.rotation.x + std::numbers::pi_v<float> * 2,
+            std::numbers::pi_v<float> * 4
+        ) - std::numbers::pi_v<float> * 2; // Clamp to [-pi, pi]
 
     if (isLookingAt)
-    {
-        mForward = -(transform.position - lookingAt).Normalized();
-
-        transform.rotation = Matrix3x3(
-            1, 0, mForward.x,
-            0, 1, mForward.y,
-            0, 0, mForward.z
-        ) * Vector3(1);
-    }
+        mForward = (lookingAt - transform.position).Normalized();
     else
-        mForward = transform.position + Vector3(
+        mForward = Vector3(
             std::cos(transform.rotation.x) * std::cos(transform.rotation.y),
             std::sin(transform.rotation.y),
             std::sin(transform.rotation.x) * std::cos(transform.rotation.y)
@@ -67,20 +109,9 @@ void Camera::Update(const float deltaTime)
     mRight = mForward.Cross(Vector3::UnitY()).Normalized();
     mUp = mRight.Cross(mForward).Normalized();
 
-    /*if (Input::keyboardKeyDown[inputs::KeyboardKey_W])
-        transform.position += mForward * speed;
-    if (Input::keyboardKeyDown[inputs::KeyboardKey_S])
-        transform.position -= mForward * speed;
-    if (Input::keyboardKeyDown[inputs::KeyboardKey_A])
-        transform.position += right * speed;
-    if (Input::keyboardKeyDown[inputs::KeyboardKey_D])
-        transform.position -= right * speed;
-    if (Input::keyboardKeyDown[inputs::KeyboardKey_Space])
-        transform.position += Vector3::UnitY() * speed;
-    if (Input::keyboardKeyDown[inputs::KeyboardKey_LeftShift])
-        transform.position -= Vector3::UnitY() * speed;*/
-
-    Matrix4x4::ViewMatrix(transform.position, mForward, Vector3::UnitY(), mView);
+    Matrix4x4::ViewMatrix(transform.position, transform.position + mForward, Vector3::UnitY(), mView);
+    if (isLookingAt)
+        transform.rotation = (Vector3) (mView * Vector4(1));
     Matrix4x4::PerspectiveProjectionMatrix(fov, 16 / 9.f, near, far, mProjection);
     mViewProjection = mProjection * mView;
 }

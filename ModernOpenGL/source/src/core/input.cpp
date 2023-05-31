@@ -25,6 +25,9 @@ GLFWwindow* Input::mWindow = nullptr;
 
 bool newMouseDown[inputs::MouseButton_MaxCount];
 bool newKeyboardKeyDown[inputs::KeyboardKey_MaxCount];
+Vector2 newMouseWheel;
+
+#define CONTROLLER_DEADZONE_DEFAULT 0.1f
 
 void MousePositionCallback(GLFWwindow*, double x, double y)
 {
@@ -33,12 +36,12 @@ void MousePositionCallback(GLFWwindow*, double x, double y)
 
 void MouseButtonCallback(GLFWwindow*, int button, int action, int)
 {
-    newMouseDown[button] = action == GLFW_PRESS;
+    newMouseDown[button] = action != GLFW_RELEASE;
 }
 
 void MouseScrollCallback(GLFWwindow*, double xoffset, double yoffset)
 {
-    Input::mouseWheel = Vector2((float) xoffset, (float) yoffset);
+    newMouseWheel = Vector2((float) xoffset, (float) yoffset);
 }
 
 void KeyCallback(GLFWwindow*, int key, int, int action, int)
@@ -47,7 +50,7 @@ void KeyCallback(GLFWwindow*, int key, int, int action, int)
     if (key == GLFW_KEY_UNKNOWN)
         return;
 
-    newKeyboardKeyDown[key] = action == GLFW_PRESS;
+    newKeyboardKeyDown[key] = action != GLFW_RELEASE;
 }
 
 void JoystickCallback(int jid, int event)
@@ -102,10 +105,10 @@ void Input::Initialize(GLFWwindow *const window)
         controllerConnected[i] = present;
 
         for (unsigned int j = 0; j < inputs::Controller_StickCount; j++)
-            controllerStickAxisDeadzones[i][j] = 0.2f;
+            controllerStickAxisDeadzones[i][j] = CONTROLLER_DEADZONE_DEFAULT;
 
         for (unsigned int j = 0; j < inputs::Controller_TriggerCount; j++)
-            controllerTriggerAxisDeadzones[i][j] = 0.2f;
+            controllerTriggerAxisDeadzones[i][j] = CONTROLLER_DEADZONE_DEFAULT;
     }
 }
 
@@ -117,7 +120,8 @@ void Input::Update()
         mousePress[i] = !mouseDown[i] && newMouseDown[i];
         mouseDown[i] = newMouseDown[i];
     }
-    mouseWheel = 0;
+    Input::mouseWheel = newMouseWheel;
+    newMouseWheel = 0;
 
     for (unsigned int i = 0; i < inputs::KeyboardKey_MaxCount; i++)
     {

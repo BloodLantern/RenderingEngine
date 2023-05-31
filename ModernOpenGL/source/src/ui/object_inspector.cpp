@@ -5,6 +5,7 @@
 #include <ImGui/imgui.h>
 
 #include "core/object.hpp"
+#include "core/input.hpp"
 #include "low_renderer/camera.hpp"
 
 void ObjectInspector::Show(Scene&)
@@ -46,10 +47,17 @@ void ObjectInspector::Show(Scene&)
 
             ImGui::Text("\tFOV:    ");
             ImGui::SameLine();
-            ImGui::SliderAngle("##5", &camera->fov, 30, 120);
+            ImGui::SliderAngle("##5", &camera->fov, 30, 90);
             ImGui::Text("\tSensitivity:    ");
             ImGui::SameLine();
-            ImGui::SliderFloat("##6", &camera->sensitivity, 1, 15);
+            if (Input::controllerConnected[inputs::Controller_0])
+                ImGui::SliderFloat("##6", &camera->stickSensitivity, 15, 50);
+            else
+                ImGui::SliderFloat("##6", &camera->mouseSensitivity, 0.1f, 10);
+
+            ImGui::Text("\tMovement speed: ");
+            ImGui::SameLine();
+            ImGui::SliderFloat("##12", &camera->moveSpeed, 0.1f, 10);
 
             ImGui::Text("\tNear:   ");
             ImGui::SameLine();
@@ -58,24 +66,40 @@ void ObjectInspector::Show(Scene&)
             ImGui::SameLine();
             ImGui::InputFloat("##8", &camera->far);
 
-            ImGui::Text("\tIs looking at:");
-            ImGui::SameLine();
-            ImGui::Checkbox("##9", &camera->isLookingAt);
-            if (camera->isLookingAt)
+            bool displayLookAt = false, displayForward = false;
+
+            if (Input::controllerConnected[inputs::Controller_0])
+            {
+                displayLookAt = true;
+                displayForward = true;
+            }
+            else
+            {
+                ImGui::Text("\tIs looking at:");
+                ImGui::SameLine();
+                ImGui::Checkbox("##9", &camera->isLookingAt);
+
+                if (camera->isLookingAt)
+                    displayLookAt = true;
+                else
+                    displayForward = true;
+            }
+
+            if (displayLookAt)
             {
                 ImGui::Text("\tLook at:");
                 ImGui::SameLine();
                 ImGui::SliderFloat3("##10", &camera->lookingAt.x, -10, 10);
             }
-            else
+            if (displayForward)
             {
                 Vector3 forward = camera->GetForward();
                 ImGui::Text("\tForward: %.3f, %.3f, %.3f", forward.x, forward.y, forward.z);
             }
 
-            ImGui::Text("\tHide cursor:  ");
+            ImGui::Text("\tFPS View:");
             ImGui::SameLine();
-            ImGui::Checkbox("##11", &camera->hideCursor);
+            ImGui::Checkbox("##11", &camera->fpsView);
         }
     }
     ImGui::End();
