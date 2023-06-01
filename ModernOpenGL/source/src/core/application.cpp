@@ -9,6 +9,7 @@
 #include "resources/resource_manager.hpp"
 #include "ui/object_hierarchy.hpp"
 #include "ui/object_inspector.hpp"
+#include "low_renderer/light.hpp"
 
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_glfw.h>
@@ -24,6 +25,8 @@ Application::Application()
     mUIComponents.push_back(objectHierarchy);
     mUIComponents.push_back(new ObjectInspector(&objectHierarchy->selected));
 }
+
+Light* light;
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
 {
@@ -93,7 +96,7 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
 
     // Setup Platform/Renderer bindings
     ImGui_ImplGlfw_InitForOpenGL(mWindow, true);
-    ImGui_ImplOpenGL3_Init("#version 330");
+    ImGui_ImplOpenGL3_Init("#version 460");
 
     Logger::LogInfo("Application successfully initialized");
 
@@ -105,6 +108,15 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
     );
     object->transform.rotation.x = -std::numbers::pi_v<float> / 2;
     mScene.root.AddChild(object);
+
+    light = new Light(0, { 0.1f, 0.1f, 0.1f, 1.f }, { 0, 0, 1, 1.f }, 0);
+    light->name = "Moon";
+    light->mesh = new Mesh(
+        ResourceManager::Load<Model>("assets/meshes/moon.obj"),
+        ResourceManager::Load<Texture>("assets/textures/moon.png"),
+        nullptr
+    );
+    mScene.root.AddChild(light);
 
     Input::Initialize(mWindow);
 
@@ -132,6 +144,7 @@ void Application::MainLoop()
             break;
 
         mScene.Update(mDeltaTime);
+        light->UpdateShader(*ResourceManager::Get<Shader>("source/shaders"));
         mScene.Draw();
         for (UIComponent* component : mUIComponents)
             component->Show(mScene);

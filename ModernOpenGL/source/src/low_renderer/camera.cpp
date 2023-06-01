@@ -72,7 +72,7 @@ void Camera::Update(const float deltaTime)
     if (movement == 0)
         mRunning = false;
     else
-        transform.position += movement.Normalized() * effectiveSpeed * (mRunning ? 2 : 1);
+        transform.position += movement.Normalized() * effectiveSpeed * (mRunning ? 2.f : 1.f);
 
     if (fpsView)
     {
@@ -99,7 +99,10 @@ void Camera::Update(const float deltaTime)
         ) - std::numbers::pi_v<float> * 2; // Clamp to [-pi, pi]
 
     if (isLookingAt)
+    {
         mForward = (lookingAt - transform.position).Normalized();
+        transform.rotation = mForward * 2 * std::numbers::pi_v<float>;
+    }
     else
         mForward = Vector3(
             std::cos(transform.rotation.x) * std::cos(transform.rotation.y),
@@ -110,8 +113,6 @@ void Camera::Update(const float deltaTime)
     mUp = mRight.Cross(mForward).Normalized();
 
     Matrix4x4::ViewMatrix(transform.position, transform.position + mForward, Vector3::UnitY(), mView);
-    if (isLookingAt)
-        transform.rotation = (Vector3) (mView * Vector4(1));
     Matrix4x4::PerspectiveProjectionMatrix(fov, 16 / 9.f, near, far, mProjection);
     mViewProjection = mProjection * mView;
 }

@@ -3,6 +3,8 @@
 #include "core/data_structure/transform.hpp"
 #include "low_renderer/mesh.hpp"
 
+#define OBJECT_DEFAULT_NAME "Object"
+
 class Object
 {
     friend class ObjectHierarchy;
@@ -12,8 +14,9 @@ public:
     Transform transform;
     Mesh* mesh = nullptr;
 
-    Object(const std::string& name = "");
-    Object(Mesh* const mesh, const std::string& name = "");
+    Object(const std::string& name = OBJECT_DEFAULT_NAME);
+    Object(const Vector3& position, const std::string& name = OBJECT_DEFAULT_NAME);
+    Object(Mesh* const mesh, const std::string& name = OBJECT_DEFAULT_NAME);
     ~Object();
 
     virtual void Update(const float deltaTime);
@@ -21,11 +24,11 @@ public:
 
     void SetParent(Object* const o) { mParent = o; }
 
-    void AddChild(Object* const o) { mChildren.push_back(o); }
-    void AddChildren(const std::vector<Object*>& o) { mChildren.insert(mChildren.end(), o.begin(), o.end()); }
-    void RemoveChild(Object* const o) { mChildren.erase(std::remove(mChildren.begin(), mChildren.end(), o)); }
-    void RemoveAllChildren() { mChildren.clear(); }
-    void ForEachChild(std::function<void(Object* const)> f) { for (Object* const child : mChildren) f(child); }
+    void AddChild(Object* const o);
+    void AddChildren(const std::vector<Object*>& o);
+    void RemoveChild(Object* const o);
+    void RemoveAllChildren();
+    void ForEachChild(std::function<void(Object* const)> f);
 
     void DeleteChildren();
 
