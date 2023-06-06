@@ -4,13 +4,13 @@
 
 #include "core/debug/logger.hpp"
 
-Shader::Shader(std::filesystem::path& folder, const std::string& vertexName, const std::string& fragmentName)
+Shader::Shader(const std::filesystem::path& folder, const std::string& vertexName, const std::string& fragmentName)
 {
-    folder = std::filesystem::relative(folder);
+    std::filesystem::path newFolder = std::filesystem::relative(folder);
 
-    if (!LoadVertex(folder.string() + '\\' + vertexName + ".vs"))
+    if (!LoadVertex(newFolder.string() + '\\' + vertexName + ".vs"))
         return;
-    if (!LoadFragment(folder.string() + '\\' + fragmentName + ".fs"))
+    if (!LoadFragment(newFolder.string() + '\\' + fragmentName + ".fs"))
         return;
 
     Link();

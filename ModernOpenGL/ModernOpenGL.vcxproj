@@ -158,10 +158,12 @@
     <ClCompile Include="externals\src\ImGui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="externals\src\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="externals\src\stb_image.cpp" />
+    <ClCompile Include="source\src\low_renderer\directional_light.cpp" />
+    <ClCompile Include="source\src\low_renderer\point_light.cpp" />
+    <ClCompile Include="source\src\low_renderer\spot_light.cpp" />
     <ClCompile Include="source\src\core\input.cpp" />
     <ClCompile Include="source\src\core\scene.cpp" />
     <ClCompile Include="source\src\low_renderer\camera.cpp" />
-    <ClCompile Include="source\src\low_renderer\light.cpp" />
     <ClCompile Include="source\src\low_renderer\mesh.cpp" />
     <ClCompile Include="source\src\core\object.cpp" />
     <ClCompile Include="source\src\core\data_structure\transform.cpp" />
@@ -182,10 +184,13 @@
     <ClInclude Include="source\include\core\input_constants.hpp" />
     <ClInclude Include="source\include\core\scene.hpp" />
     <ClInclude Include="source\include\low_renderer\camera.hpp" />
+    <ClInclude Include="source\include\low_renderer\directional_light.hpp" />
     <ClInclude Include="source\include\low_renderer\light.hpp" />
     <ClInclude Include="source\include\low_renderer\mesh.hpp" />
     <ClInclude Include="source\include\core\object.hpp" />
     <ClInclude Include="source\include\core\data_structure\transform.hpp" />
+    <ClInclude Include="source\include\low_renderer\point_light.hpp" />
+    <ClInclude Include="source\include\low_renderer\spot_light.hpp" />
     <ClInclude Include="source\include\resources\model.hpp" />
     <ClInclude Include="source\include\core\data_structure\tsqueue.hpp" />
     <ClInclude Include="source\include\core\debug\assertion.hpp" />

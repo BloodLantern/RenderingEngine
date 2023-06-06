@@ -1,9 +1,12 @@
 #pragma once
 
 #include "core/data_structure/transform.hpp"
-#include "low_renderer/mesh.hpp"
 
 #define OBJECT_DEFAULT_NAME "Object"
+
+class Mesh;
+class Light;
+class Camera;
 
 class Object
 {
@@ -14,13 +17,14 @@ public:
     Transform transform;
     Mesh* mesh = nullptr;
 
+    Object() = default;
     Object(const std::string& name = OBJECT_DEFAULT_NAME);
     Object(const Vector3& position, const std::string& name = OBJECT_DEFAULT_NAME);
     Object(Mesh* const mesh, const std::string& name = OBJECT_DEFAULT_NAME);
     ~Object();
 
     virtual void Update(const float deltaTime);
-    void Draw(const Matrix4x4& viewProjectionMatrix);
+    void Draw(const Matrix4x4& viewProjectionMatrix, const Camera& camera, const Light* const* const lights);
 
     void SetParent(Object* const o) { mParent = o; }
 

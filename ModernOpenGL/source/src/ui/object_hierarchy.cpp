@@ -7,12 +7,13 @@
 void ObjectHierarchy::Show(Scene& scene)
 {
     ImGui::Begin("Object Hierarchy");
-    ShowObject(&scene.root);
     ShowObject(&scene.camera);
+    ShowObject(&scene.lightsRoot);
+    ShowObject(&scene.root);
     ImGui::End();
 
     if (!selected)
-        selected = &scene.root;
+        selected = &scene.camera;
 }
 
 void ObjectHierarchy::ShowObject(Object* const object)

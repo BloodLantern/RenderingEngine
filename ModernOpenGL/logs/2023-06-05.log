@@ -1,0 +1,671 @@
+[08:53:09] [INFO] Logging to file: logs/2023-06-05.log
+[08:53:09] [INFO] Starting logging #0
+[08:53:09] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[08:53:10] [INFO] Application successfully initialized
+[08:53:10] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[08:53:10] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[08:53:10] [INFO] Linking shader program
+[08:53:10] [INFO] Loading texture: assets/textures/viking_room.jpg
+[08:53:10] [INFO] Loading model: assets/meshes/viking_room.obj
+[08:53:11] [INFO] Linking model
+[08:53:11] [INFO] Loading texture: assets/textures/moon.png
+[08:53:11] [INFO] Loading model: assets/meshes/moon.obj
+[08:53:11] [INFO] Linking model
+[08:53:28] [INFO] Shutting down application...
+
+[09:26:27] [INFO] Logging to file: logs/2023-06-05.log
+[09:26:27] [INFO] Starting logging #1
+[09:26:27] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:26:27] [INFO] Application successfully initialized
+[09:26:27] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:26:27] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:26:27] [INFO] Linking shader program
+[09:26:27] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:26:28] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:26:28] [INFO] Linking model
+[09:26:28] [INFO] Loading texture: assets/textures/moon.png
+[09:26:28] [INFO] Loading model: assets/meshes/moon.obj
+[09:26:29] [INFO] Linking model
+[09:26:50] [INFO] Shutting down application...
+
+[09:38:30] [INFO] Logging to file: logs/2023-06-05.log
+[09:38:30] [INFO] Starting logging #2
+[09:38:30] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:38:30] [INFO] Application successfully initialized
+[09:38:30] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:38:30] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:38:30] [INFO] Linking shader program
+[09:38:30] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:38:31] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:38:31] [INFO] Linking model
+[09:38:31] [INFO] Loading texture: assets/textures/moon.png
+[09:38:31] [INFO] Loading model: assets/meshes/moon.obj
+[09:38:32] [INFO] Linking model
+[09:38:42] [INFO] Shutting down application...
+
+[09:42:23] [INFO] Logging to file: logs/2023-06-05.log
+[09:42:23] [INFO] Starting logging #3
+[09:42:23] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:42:24] [INFO] Application successfully initialized
+[09:42:24] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:42:24] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:42:24] [INFO] Linking shader program
+[09:42:24] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:42:24] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:42:24] [INFO] Linking model
+[09:42:24] [INFO] Loading texture: assets/textures/moon.png
+[09:42:25] [INFO] Loading model: assets/meshes/moon.obj
+[09:42:25] [INFO] Linking model
+[09:42:30] [INFO] Shutting down application...
+
+[09:43:19] [INFO] Logging to file: logs/2023-06-05.log
+[09:43:19] [INFO] Starting logging #4
+[09:43:19] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:43:19] [INFO] Application successfully initialized
+[09:43:19] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:43:19] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:43:19] [INFO] Linking shader program
+[09:43:19] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:43:20] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:43:20] [INFO] Linking model
+[09:43:20] [INFO] Loading texture: assets/textures/moon.png
+[09:43:21] [INFO] Loading model: assets/meshes/moon.obj
+[09:43:21] [INFO] Linking model
+[09:43:43] [INFO] Shutting down application...
+
+[09:43:56] [INFO] Logging to file: logs/2023-06-05.log
+[09:43:56] [INFO] Starting logging #5
+[09:43:56] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:43:57] [INFO] Application successfully initialized
+[09:43:57] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:43:57] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:43:57] [INFO] Linking shader program
+[09:43:57] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:43:58] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:43:58] [INFO] Linking model
+[09:43:58] [INFO] Loading texture: assets/textures/moon.png
+[09:43:58] [INFO] Loading model: assets/meshes/moon.obj
+[09:43:58] [INFO] Linking model
+[09:44:04] [INFO] Shutting down application...
+
+[09:46:26] [INFO] Logging to file: logs/2023-06-05.log
+[09:46:26] [INFO] Starting logging #6
+[09:46:26] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:46:26] [INFO] Application successfully initialized
+[09:46:26] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:46:26] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:46:26] [INFO] Linking shader program
+[09:46:26] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:46:26] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:46:27] [INFO] Linking model
+[09:46:27] [INFO] Loading texture: assets/textures/moon.png
+[09:46:27] [INFO] Loading model: assets/meshes/moon.obj
+[09:46:27] [INFO] Linking model
+[09:46:40] [INFO] Shutting down application...
+
+[09:55:42] [INFO] Logging to file: logs/2023-06-05.log
+[09:55:42] [INFO] Starting logging #7
+[09:55:42] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:55:43] [INFO] Application successfully initialized
+[09:55:43] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:55:43] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:55:43] [INFO] Linking shader program
+[09:55:43] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:55:43] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:55:43] [INFO] Linking model
+[09:55:43] [INFO] Loading texture: assets/textures/moon.png
+[09:55:44] [INFO] Loading model: assets/meshes/moon.obj
+[09:55:44] [INFO] Linking model
+[09:55:59] [INFO] Shutting down application...
+
+[09:56:43] [INFO] Logging to file: logs/2023-06-05.log
+[09:56:43] [INFO] Starting logging #8
+[09:56:43] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[09:56:44] [INFO] Application successfully initialized
+[09:56:44] [INFO] Compiling vertex shader: source\shaders\vertex.vs
+[09:56:44] [INFO] Compiling fragment shader: source\shaders\fragment.fs
+[09:56:44] [INFO] Linking shader program
+[09:56:44] [INFO] Loading texture: assets/textures/viking_room.jpg
+[09:56:44] [INFO] Loading model: assets/meshes/viking_room.obj
+[09:56:45] [INFO] Linking model
+[09:56:45] [INFO] Loading texture: assets/textures/moon.png
+[09:56:45] [INFO] Loading model: assets/meshes/moon.obj
+[09:56:45] [INFO] Linking model
+[09:57:24] [INFO] Shutting down application...
+
+[10:13:01] [INFO] Logging to file: logs/2023-06-05.log
+[10:13:01] [INFO] Starting logging #9
+[10:13:01] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:13:01] [INFO] Application successfully initialized
+[10:13:01] [INFO] Compiling vertex shader: source\shaders\object.vs.vs
+[10:13:01] [ERROR] Could not open shader file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\source\shaders\object.vs.vs
+[10:13:01] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:13:02] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:13:02] [INFO] Linking model
+[10:13:02] [INFO] Compiling vertex shader: source\shaders\light.vs.vs
+[10:13:02] [ERROR] Could not open shader file: C:\Users\m.grimardhamel\Documents\Dev\ModernOpenGL\ModernOpenGL\source\shaders\light.vs.vs
+[10:13:02] [INFO] Loading texture: assets/textures/moon.png
+[10:13:02] [INFO] Loading model: assets/meshes/moon.obj
+[10:13:03] [INFO] Linking model
+
+[10:14:03] [INFO] Logging to file: logs/2023-06-05.log
+[10:14:03] [INFO] Starting logging #10
+[10:14:03] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:14:04] [INFO] Application successfully initialized
+[10:14:04] [INFO] Compiling vertex shader: source\shaders\object.vs
+[10:14:04] [INFO] Compiling fragment shader: source\shaders\object.fs
+[10:14:04] [INFO] Linking shader program
+[10:14:04] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:14:04] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:14:05] [INFO] Linking model
+[10:14:05] [INFO] Compiling vertex shader: source\shaders\light.vs
+[10:14:05] [INFO] Compiling fragment shader: source\shaders\light.fs
+[10:14:05] [INFO] Linking shader program
+[10:14:05] [INFO] Loading texture: assets/textures/moon.png
+[10:14:05] [INFO] Loading model: assets/meshes/moon.obj
+[10:14:05] [INFO] Linking model
+
+[10:15:30] [INFO] Logging to file: logs/2023-06-05.log
+[10:15:30] [INFO] Starting logging #11
+[10:15:30] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:15:30] [INFO] Application successfully initialized
+[10:15:30] [INFO] Compiling vertex shader: source\shaders\object.vs
+[10:15:30] [INFO] Compiling fragment shader: source\shaders\object.fs
+[10:15:30] [INFO] Linking shader program
+[10:15:30] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:15:30] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:15:31] [INFO] Linking model
+[10:15:31] [INFO] Compiling vertex shader: source\shaders\light.vs
+[10:15:31] [INFO] Compiling fragment shader: source\shaders\light.fs
+[10:15:31] [INFO] Linking shader program
+[10:15:31] [INFO] Loading texture: assets/textures/moon.png
+[10:15:31] [INFO] Loading model: assets/meshes/moon.obj
+[10:15:32] [INFO] Linking model
+[10:15:52] [INFO] Shutting down application...
+
+[10:42:24] [INFO] Logging to file: logs/2023-06-05.log
+[10:42:24] [INFO] Starting logging #12
+[10:42:24] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:42:25] [INFO] Application successfully initialized
+[10:42:25] [INFO] Compiling vertex shader: source\shaders\object.vs
+[10:42:25] [INFO] Compiling fragment shader: source\shaders\object.fs
+[10:42:25] [INFO] Linking shader program
+[10:42:25] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:42:26] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:42:26] [INFO] Linking model
+[10:42:26] [INFO] Compiling vertex shader: source\shaders\light.vs
+[10:42:26] [INFO] Compiling fragment shader: source\shaders\light.fs
+[10:42:26] [INFO] Linking shader program
+[10:42:26] [INFO] Loading texture: assets/textures/moon.png
+[10:42:26] [INFO] Loading model: assets/meshes/moon.obj
+[10:42:27] [INFO] Linking model
+
+[10:44:05] [INFO] Logging to file: logs/2023-06-05.log
+[10:44:05] [INFO] Starting logging #13
+[10:44:05] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:44:07] [INFO] Application successfully initialized
+[10:44:07] [INFO] Compiling vertex shader: source\shaders\object.vs
+[10:44:07] [INFO] Compiling fragment shader: source\shaders\object.fs
+[10:44:07] [INFO] Linking shader program
+[10:44:07] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:44:07] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:44:07] [INFO] Linking model
+[10:44:07] [INFO] Compiling vertex shader: source\shaders\light.vs
+[10:44:07] [INFO] Compiling fragment shader: source\shaders\light.fs
+[10:44:07] [INFO] Linking shader program
+[10:44:07] [INFO] Loading texture: assets/textures/moon.png
+[10:44:07] [INFO] Loading model: assets/meshes/moon.obj
+[10:44:08] [INFO] Linking model
+
+[10:50:13] [INFO] Logging to file: logs/2023-06-05.log
+[10:50:13] [INFO] Starting logging #14
+[10:50:13] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:50:14] [INFO] Application successfully initialized
+[10:50:14] [INFO] Compiling vertex shader: source\shaders\object.vs
+[10:50:14] [INFO] Compiling fragment shader: source\shaders\object.fs
+[10:50:14] [INFO] Linking shader program
+[10:50:14] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:50:15] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:50:15] [INFO] Linking model
+[10:50:15] [INFO] Compiling vertex shader: source\shaders\light.vs
+[10:50:15] [INFO] Compiling fragment shader: source\shaders\light.fs
+[10:50:15] [INFO] Linking shader program
+[10:50:15] [INFO] Loading texture: assets/textures/moon.png
+[10:50:15] [INFO] Loading model: assets/meshes/moon.obj
+[10:50:15] [INFO] Linking model
+[10:50:26] [INFO] Shutting down application...
+
+[10:57:44] [INFO] Logging to file: logs/2023-06-05.log
+[10:57:44] [INFO] Starting logging #15
+[10:57:44] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:57:45] [INFO] Application successfully initialized
+[10:57:45] [INFO] Compiling vertex shader: source\shaders\object.vs
+[10:57:45] [INFO] Compiling fragment shader: source\shaders\object.fs
+[10:57:45] [INFO] Linking shader program
+[10:57:45] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:57:45] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:57:45] [INFO] Linking model
+[10:57:45] [INFO] Compiling vertex shader: source\shaders\light.vs
+[10:57:45] [INFO] Compiling fragment shader: source\shaders\light.fs
+[10:57:45] [INFO] Linking shader program
+[10:57:45] [INFO] Loading texture: assets/textures/moon.png
+[10:57:45] [INFO] Loading model: assets/meshes/moon.obj
+[10:57:45] [INFO] Linking model
+[10:58:05] [INFO] Shutting down application...
+
+[10:59:51] [INFO] Logging to file: logs/2023-06-05.log
+[10:59:51] [INFO] Starting logging #16
+[10:59:51] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[10:59:52] [INFO] Application successfully initialized
+[10:59:52] [INFO] Compiling vertex shader: source\shaders\object.vs
+[10:59:52] [INFO] Compiling fragment shader: source\shaders\object.fs
+[10:59:52] [INFO] Linking shader program
+[10:59:52] [INFO] Loading texture: assets/textures/viking_room.jpg
+[10:59:52] [INFO] Loading model: assets/meshes/viking_room.obj
+[10:59:52] [INFO] Linking model
+[10:59:52] [INFO] Compiling vertex shader: source\shaders\light.vs
+[10:59:52] [INFO] Compiling fragment shader: source\shaders\light.fs
+[10:59:52] [INFO] Linking shader program
+[10:59:52] [INFO] Loading texture: assets/textures/moon.png
+[10:59:53] [INFO] Loading model: assets/meshes/moon.obj
+[10:59:53] [INFO] Linking model
+[11:00:03] [INFO] Shutting down application...
+
+[11:00:56] [INFO] Logging to file: logs/2023-06-05.log
+[11:00:56] [INFO] Starting logging #17
+[11:00:56] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:00:56] [INFO] Application successfully initialized
+[11:00:56] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:00:56] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:00:56] [INFO] Linking shader program
+[11:00:56] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:00:56] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:00:57] [INFO] Linking model
+[11:00:57] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:00:57] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:00:57] [INFO] Linking shader program
+[11:00:57] [INFO] Loading texture: assets/textures/moon.png
+[11:00:57] [INFO] Loading model: assets/meshes/moon.obj
+[11:00:57] [INFO] Linking model
+[11:01:00] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:06] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:10] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:14] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:15] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:15] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:15] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:16] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:16] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:16] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:16] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:16] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:17] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+[11:01:17] [INFO] source\src\low_renderer\mesh.cpp(18): 0
+
+[11:03:03] [INFO] Logging to file: logs/2023-06-05.log
+[11:03:03] [INFO] Starting logging #18
+[11:03:03] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:03:04] [INFO] Application successfully initialized
+[11:03:04] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:03:04] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:03:04] [INFO] Linking shader program
+[11:03:04] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:03:04] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:03:04] [INFO] Linking model
+[11:03:04] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:03:04] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:03:04] [INFO] Linking shader program
+[11:03:04] [INFO] Loading texture: assets/textures/moon.png
+[11:03:05] [INFO] Loading model: assets/meshes/moon.obj
+[11:03:05] [INFO] Linking model
+
+[11:13:06] [INFO] Logging to file: logs/2023-06-05.log
+[11:13:06] [INFO] Starting logging #19
+[11:13:06] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:13:07] [INFO] Application successfully initialized
+[11:13:07] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:13:07] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:13:07] [INFO] Linking shader program
+[11:13:07] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:13:07] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:13:07] [INFO] Linking model
+[11:13:07] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:13:07] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:13:07] [INFO] Linking shader program
+[11:13:07] [INFO] Loading texture: assets/textures/moon.png
+[11:13:07] [INFO] Loading model: assets/meshes/moon.obj
+[11:13:07] [INFO] Linking model
+[11:13:11] [INFO] Shutting down application...
+
+[11:13:22] [INFO] Logging to file: logs/2023-06-05.log
+[11:13:22] [INFO] Starting logging #20
+[11:13:22] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:13:22] [INFO] Application successfully initialized
+[11:13:22] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:13:22] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:13:22] [INFO] Linking shader program
+[11:13:22] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:13:22] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:13:23] [INFO] Linking model
+[11:13:23] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:13:23] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:13:23] [INFO] Linking shader program
+[11:13:23] [INFO] Loading texture: assets/textures/moon.png
+[11:13:23] [INFO] Loading model: assets/meshes/moon.obj
+[11:13:23] [INFO] Linking model
+[11:13:38] [INFO] Shutting down application...
+
+[11:17:51] [INFO] Logging to file: logs/2023-06-05.log
+[11:17:51] [INFO] Starting logging #21
+[11:17:51] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:17:52] [INFO] Application successfully initialized
+[11:17:52] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:17:52] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:17:52] [INFO] Linking shader program
+[11:17:52] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:17:52] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:17:52] [INFO] Linking model
+[11:17:52] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:17:53] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:17:53] [INFO] Linking shader program
+[11:17:53] [INFO] Loading texture: assets/textures/moon.png
+[11:17:53] [INFO] Loading model: assets/meshes/moon.obj
+[11:17:53] [INFO] Linking model
+[11:18:36] [INFO] Shutting down application...
+
+[11:20:37] [INFO] Logging to file: logs/2023-06-05.log
+[11:20:37] [INFO] Starting logging #22
+[11:20:37] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:20:37] [INFO] Application successfully initialized
+[11:20:37] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:20:37] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:20:37] [INFO] Linking shader program
+[11:20:37] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:20:38] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:20:38] [INFO] Linking model
+[11:20:38] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:20:38] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:20:38] [INFO] Linking shader program
+[11:20:38] [INFO] Loading texture: assets/textures/moon.png
+[11:20:39] [INFO] Loading model: assets/meshes/moon.obj
+[11:20:39] [INFO] Linking model
+[11:21:19] [INFO] Shutting down application...
+
+[11:21:21] [INFO] Logging to file: logs/2023-06-05.log
+[11:21:21] [INFO] Starting logging #23
+[11:21:21] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:21:23] [INFO] Application successfully initialized
+[11:21:23] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:21:23] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:21:23] [INFO] Linking shader program
+[11:21:23] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:21:23] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:21:23] [INFO] Linking model
+
+[11:21:35] [INFO] Logging to file: logs/2023-06-05.log
+[11:21:35] [INFO] Starting logging #24
+[11:21:35] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:21:36] [INFO] Application successfully initialized
+[11:21:36] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:21:36] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:21:36] [INFO] Linking shader program
+[11:21:36] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:21:36] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:21:36] [INFO] Linking model
+[11:21:36] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:21:36] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:21:36] [INFO] Linking shader program
+[11:21:36] [INFO] Loading texture: assets/textures/moon.png
+[11:21:37] [INFO] Loading model: assets/meshes/moon.obj
+[11:21:37] [INFO] Linking model
+[11:22:02] [INFO] Shutting down application...
+
+[11:22:35] [INFO] Logging to file: logs/2023-06-05.log
+[11:22:35] [INFO] Starting logging #25
+[11:22:35] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:22:36] [INFO] Application successfully initialized
+[11:22:36] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:22:36] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:22:36] [INFO] Linking shader program
+[11:22:36] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:22:36] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:22:37] [INFO] Linking model
+[11:22:37] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:22:37] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:22:37] [INFO] Linking shader program
+[11:22:37] [INFO] Loading texture: assets/textures/moon.png
+[11:22:37] [INFO] Loading model: assets/meshes/moon.obj
+[11:22:37] [INFO] Linking model
+[11:22:52] [INFO] Shutting down application...
+
+[11:23:36] [INFO] Logging to file: logs/2023-06-05.log
+[11:23:36] [INFO] Starting logging #26
+[11:23:36] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:23:37] [INFO] Application successfully initialized
+[11:23:37] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:23:37] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:23:37] [INFO] Linking shader program
+[11:23:37] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:23:37] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:23:38] [INFO] Linking model
+[11:23:38] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:23:38] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:23:38] [INFO] Linking shader program
+[11:23:38] [INFO] Loading texture: assets/textures/moon.png
+[11:23:38] [INFO] Loading model: assets/meshes/moon.obj
+[11:23:38] [INFO] Linking model
+[11:23:46] [INFO] Shutting down application...
+
+[11:24:01] [INFO] Logging to file: logs/2023-06-05.log
+[11:24:01] [INFO] Starting logging #27
+[11:24:01] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:24:02] [INFO] Application successfully initialized
+[11:24:02] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:24:02] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:24:02] [INFO] Linking shader program
+[11:24:02] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:24:02] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:24:02] [INFO] Linking model
+[11:24:02] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:24:02] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:24:02] [INFO] Linking shader program
+[11:24:02] [INFO] Loading texture: assets/textures/moon.png
+[11:24:03] [INFO] Loading model: assets/meshes/moon.obj
+[11:24:03] [INFO] Linking model
+[11:24:24] [INFO] Shutting down application...
+
+[11:30:38] [INFO] Logging to file: logs/2023-06-05.log
+[11:30:38] [INFO] Starting logging #28
+[11:30:38] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:30:39] [INFO] Application successfully initialized
+[11:30:39] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:30:39] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:30:39] [INFO] Linking shader program
+[11:30:39] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:30:40] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:30:40] [INFO] Linking model
+[11:30:40] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:30:40] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:30:40] [INFO] Linking shader program
+[11:30:40] [INFO] Loading texture: assets/textures/moon.png
+[11:30:40] [INFO] Loading model: assets/meshes/moon.obj
+[11:30:40] [INFO] Linking model
+[11:31:19] [INFO] Shutting down application...
+
+[11:32:08] [INFO] Logging to file: logs/2023-06-05.log
+[11:32:08] [INFO] Starting logging #29
+[11:32:08] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:32:09] [INFO] Application successfully initialized
+[11:32:09] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:32:10] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:32:10] [INFO] Linking shader program
+[11:32:10] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:32:10] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:32:10] [INFO] Linking model
+[11:32:10] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:32:10] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:32:10] [INFO] Linking shader program
+[11:32:10] [INFO] Loading texture: assets/textures/moon.png
+[11:32:10] [INFO] Loading model: assets/meshes/moon.obj
+[11:32:10] [INFO] Linking model
+[11:33:07] [INFO] Shutting down application...
+
+[11:33:11] [INFO] Logging to file: logs/2023-06-05.log
+[11:33:11] [INFO] Starting logging #30
+[11:33:11] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:33:12] [INFO] Application successfully initialized
+[11:33:12] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:33:12] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:33:12] [INFO] Linking shader program
+[11:33:12] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:33:12] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:33:13] [INFO] Linking model
+[11:33:13] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:33:13] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:33:13] [INFO] Linking shader program
+[11:33:13] [INFO] Loading texture: assets/textures/moon.png
+[11:33:13] [INFO] Loading model: assets/meshes/moon.obj
+[11:33:13] [INFO] Linking model
+[11:33:18] [INFO] Shutting down application...
+
+[11:41:58] [INFO] Logging to file: logs/2023-06-05.log
+[11:41:58] [INFO] Starting logging #31
+[11:41:58] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:41:59] [INFO] Application successfully initialized
+[11:41:59] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:41:59] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:41:59] [INFO] Linking shader program
+[11:41:59] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:41:59] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:41:59] [INFO] Linking model
+[11:42:00] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:42:00] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:42:00] [INFO] Linking shader program
+[11:42:00] [INFO] Loading texture: assets/textures/moon.png
+[11:42:00] [INFO] Loading model: assets/meshes/moon.obj
+[11:42:00] [INFO] Linking model
+[11:42:04] [INFO] Shutting down application...
+
+[11:44:30] [INFO] Logging to file: logs/2023-06-05.log
+[11:44:30] [INFO] Starting logging #32
+[11:44:30] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:44:31] [INFO] Application successfully initialized
+[11:44:31] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:44:31] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:44:31] [INFO] Linking shader program
+[11:44:31] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:44:31] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:44:32] [INFO] Linking model
+[11:44:32] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:44:32] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:44:32] [INFO] Linking shader program
+[11:44:32] [INFO] Loading texture: assets/textures/moon.png
+[11:44:32] [INFO] Loading model: assets/meshes/moon.obj
+[11:44:32] [INFO] Linking model
+[11:44:48] [INFO] Shutting down application...
+
+[11:45:27] [INFO] Logging to file: logs/2023-06-05.log
+[11:45:27] [INFO] Starting logging #33
+[11:45:27] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:45:28] [INFO] Application successfully initialized
+[11:45:28] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:45:28] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:45:28] [INFO] Linking shader program
+[11:45:28] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:45:28] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:45:28] [INFO] Linking model
+[11:45:28] [INFO] Compiling vertex shader: source\shaders\light.vs
+[11:45:28] [INFO] Compiling fragment shader: source\shaders\light.fs
+[11:45:28] [INFO] Linking shader program
+[11:45:28] [INFO] Loading texture: assets/textures/moon.png
+[11:45:28] [INFO] Loading model: assets/meshes/moon.obj
+[11:45:28] [INFO] Linking model
+[11:46:03] [INFO] Shutting down application...
+
+[11:53:33] [INFO] Logging to file: logs/2023-06-05.log
+[11:53:33] [INFO] Starting logging #34
+[11:53:33] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:53:34] [INFO] Application successfully initialized
+[11:53:34] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:53:34] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:53:34] [INFO] Linking shader program
+[11:53:34] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:53:34] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:53:34] [INFO] Linking model
+[11:53:34] [INFO] Compiling vertex shader: source\shaders\lightSource.vs
+[11:53:34] [INFO] Compiling fragment shader: source\shaders\lightSource.fs
+[11:53:34] [INFO] Linking shader program
+[11:53:34] [INFO] Loading texture: assets/textures/moon.png
+[11:53:35] [INFO] Loading model: assets/meshes/moon.obj
+[11:53:35] [INFO] Linking model
+[11:53:57] [INFO] Shutting down application...
+
+[11:55:04] [INFO] Logging to file: logs/2023-06-05.log
+[11:55:04] [INFO] Starting logging #35
+[11:55:04] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[11:55:05] [INFO] Application successfully initialized
+[11:55:05] [INFO] Compiling vertex shader: source\shaders\object.vs
+[11:55:05] [INFO] Compiling fragment shader: source\shaders\object.fs
+[11:55:05] [INFO] Linking shader program
+[11:55:05] [INFO] Loading texture: assets/textures/viking_room.jpg
+[11:55:05] [INFO] Loading model: assets/meshes/viking_room.obj
+[11:55:05] [INFO] Linking model
+[11:55:05] [INFO] Compiling vertex shader: source\shaders\lightSource.vs
+[11:55:05] [INFO] Compiling fragment shader: source\shaders\lightSource.fs
+[11:55:05] [INFO] Linking shader program
+[11:55:05] [INFO] Loading texture: assets/textures/moon.png
+[11:55:06] [INFO] Loading model: assets/meshes/moon.obj
+[11:55:06] [INFO] Linking model
+[11:56:00] [INFO] Shutting down application...
+
+[14:54:44] [INFO] Logging to file: logs/2023-06-05.log
+[14:54:44] [INFO] Starting logging #36
+[14:54:44] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[14:54:44] [INFO] Application successfully initialized
+[14:54:44] [INFO] Compiling vertex shader: source\shaders\object.vs
+[14:54:44] [INFO] Compiling fragment shader: source\shaders\object.fs
+[14:54:44] [INFO] Linking shader program
+[14:54:44] [INFO] Loading texture: assets/textures/viking_room.jpg
+[14:54:44] [INFO] Loading model: assets/meshes/viking_room.obj
+[14:54:44] [INFO] Linking model
+[14:54:44] [INFO] Compiling vertex shader: source\shaders\lightSource.vs
+[14:54:44] [INFO] Compiling fragment shader: source\shaders\lightSource.fs
+[14:54:44] [INFO] Linking shader program
+[14:54:44] [INFO] Loading texture: assets/textures/moon.png
+[14:54:45] [INFO] Loading model: assets/meshes/moon.obj
+[14:54:45] [INFO] Linking model
+[14:55:22] [INFO] Shutting down application...
+
+[14:55:56] [INFO] Logging to file: logs/2023-06-05.log
+[14:55:56] [INFO] Starting logging #37
+[14:55:56] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[14:55:59] [INFO] Application successfully initialized
+[14:55:59] [INFO] Compiling vertex shader: source\shaders\object.vs
+[14:55:59] [INFO] Compiling fragment shader: source\shaders\object.fs
+[14:55:59] [INFO] Linking shader program
+[14:55:59] [INFO] Loading texture: assets/textures/viking_room.jpg
+[14:55:59] [INFO] Loading model: assets/meshes/viking_room.obj
+[14:56:00] [INFO] Linking model
+[14:56:00] [INFO] Compiling vertex shader: source\shaders\lightSource.vs
+[14:56:00] [INFO] Compiling fragment shader: source\shaders\lightSource.fs
+[14:56:00] [INFO] Linking shader program
+[14:56:00] [INFO] Loading texture: assets/textures/moon.png
+[14:56:00] [INFO] Loading model: assets/meshes/moon.obj
+[14:56:00] [INFO] Linking model
+
+[14:58:58] [INFO] Logging to file: logs/2023-06-05.log
+[14:58:58] [INFO] Starting logging #38
+[14:58:58] [INFO] Initializing application with size [1280, 720] and title 'ModernOpenGL'...
+[14:58:59] [INFO] Application successfully initialized
+[14:58:59] [INFO] Compiling vertex shader: source\shaders\object.vs
+[14:58:59] [INFO] Compiling fragment shader: source\shaders\object.fs
+[14:58:59] [INFO] Linking shader program
+[14:58:59] [INFO] Loading texture: assets/textures/viking_room.jpg
+[14:58:59] [INFO] Loading model: assets/meshes/viking_room.obj
+[14:58:59] [INFO] Linking model
+[14:59:00] [INFO] Compiling vertex shader: source\shaders\lightSource.vs
+[14:59:00] [INFO] Compiling fragment shader: source\shaders\lightSource.fs
+[14:59:00] [INFO] Linking shader program
+[14:59:00] [INFO] Loading texture: assets/textures/moon.png
+[14:59:00] [INFO] Loading model: assets/meshes/moon.obj
+[14:59:00] [INFO] Linking model

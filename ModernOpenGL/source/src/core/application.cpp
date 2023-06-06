@@ -3,13 +3,18 @@
 #include "core/object.hpp"
 #include "core/input.hpp"
 #include "core/debug/logger.hpp"
+#include "core/data_structure/transform.hpp"
 #include "resources/shader.hpp"
 #include "resources/model.hpp"
 #include "resources/texture.hpp"
 #include "resources/resource_manager.hpp"
 #include "ui/object_hierarchy.hpp"
 #include "ui/object_inspector.hpp"
+#include "low_renderer/mesh.hpp"
 #include "low_renderer/light.hpp"
+#include "low_renderer/directional_light.hpp"
+#include "low_renderer/point_light.hpp"
+#include "low_renderer/spot_light.hpp"
 
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_glfw.h>
@@ -25,8 +30,6 @@ Application::Application()
     mUIComponents.push_back(objectHierarchy);
     mUIComponents.push_back(new ObjectInspector(&objectHierarchy->selected));
 }
-
-Light* light;
 
 bool Application::Initialize(const Vector2i windowSize, const char* const windowTitle)
 {
@@ -104,19 +107,29 @@ bool Application::Initialize(const Vector2i windowSize, const char* const window
     object->mesh = new Mesh(
         ResourceManager::Load<Model>("assets/meshes/viking_room.obj"),
         ResourceManager::Load<Texture>("assets/textures/viking_room.jpg"),
-        ResourceManager::Load<Shader>("source/shaders")
+        ResourceManager::Load<Shader>("source/shaders/object", new Shader("source/shaders", "object", "object"))
     );
     object->transform.rotation.x = -std::numbers::pi_v<float> / 2;
     mScene.root.AddChild(object);
 
-    light = new Light(0, { 0.1f, 0.1f, 0.1f, 1.f }, { 0, 0, 1, 1.f }, 0);
-    light->name = "Moon";
-    light->mesh = new Mesh(
+    DirectionalLight* directionalLight = new DirectionalLight(Vector3(-0.2f, -1.0f, -0.3f), 0, 0.3f, 0);
+    mScene.lightsRoot.AddChild(mScene.directionalLights[0] = directionalLight);
+    directionalLight->name = "Sun";
+
+    PointLight* pointLight = new PointLight(Vector3::UnitY() * 0.8f, 0, Vector3(0.5f, 0.5f, 0.5f), Vector3(0.9f, 0.8f, 0));
+    mScene.lightsRoot.AddChild(mScene.pointLights[0] = pointLight);
+    pointLight->transform.scale = 0.1f;
+    pointLight->name = "Moon";
+    pointLight->mesh = new Mesh(
         ResourceManager::Load<Model>("assets/meshes/moon.obj"),
         ResourceManager::Load<Texture>("assets/textures/moon.png"),
-        nullptr
+        ResourceManager::Load<Shader>("source/shaders/lightSource", new Shader("source/shaders", "lightSource", "lightSource"))
     );
-    mScene.root.AddChild(light);
+
+    SpotLight* spotLight = new SpotLight(0, Vector3::UnitZ(), std::numbers::pi_v<float> / 2,
+        std::numbers::pi_v<float> / 4, 0, 1, 0.5f);
+    mScene.camera.AddChild(mScene.spotLights[0] = spotLight);
+    spotLight->name = "Spotlight";
 
     Input::Initialize(mWindow);
 
@@ -144,7 +157,6 @@ void Application::MainLoop()
             break;
 
         mScene.Update(mDeltaTime);
-        light->UpdateShader(*ResourceManager::Get<Shader>("source/shaders"));
         mScene.Draw();
         for (UIComponent* component : mUIComponents)
             component->Show(mScene);
@@ -182,7 +194,6 @@ void Application::Shutdown()
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
-    
 
 	glfwDestroyWindow(mWindow);
     glfwTerminate();
@@ -193,10 +204,15 @@ void Application::Shutdown()
 void Application::ShowDebugWindow()
 {
     static bool showInputs = false;
+    static bool vsync = true;
 
     ImGui::Begin("Debug");
+    ImGui::Text("%4.2f FPS", 1 / mDeltaTime);
     ImGui::Checkbox("Show inputs", &showInputs);
+    ImGui::Checkbox("Enable VSync", &vsync);
     ImGui::End();
+
+    glfwSwapInterval(vsync);
 
     if (showInputs)
     {

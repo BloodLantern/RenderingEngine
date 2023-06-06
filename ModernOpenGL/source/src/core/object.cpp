@@ -2,6 +2,10 @@
 
 #include <ImGui/imgui.h>
 
+#include "low_renderer/mesh.hpp"
+#include "low_renderer/light.hpp"
+#include "low_renderer/camera.hpp"
+
 Object::Object(const std::string &name)
     : name(name), transform(*this)
 {
@@ -31,13 +35,13 @@ void Object::Update(const float deltaTime)
         child->Update(deltaTime);
 }
 
-void Object::Draw(const Matrix4x4& viewProjectionMatrix)
+void Object::Draw(const Matrix4x4& viewProjectionMatrix, const Camera& camera, const Light* const* const lights)
 {
     if (mesh)
-        mesh->Draw(transform.mGlobal, viewProjectionMatrix);
+        mesh->Draw(transform.mGlobal, viewProjectionMatrix, camera, lights);
 
     for (Object* const child : mChildren)
-        child->Draw(viewProjectionMatrix);
+        child->Draw(viewProjectionMatrix, camera, lights);
 }
 void Object::AddChild(Object *const o)
 {

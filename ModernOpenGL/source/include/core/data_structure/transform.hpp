@@ -19,6 +19,7 @@ public:
     void Update(const Transform* parent);
 
     Object& GetObject() const { return mObject; }
+    const Matrix4x4& GetGlobal() const { return mGlobal; }
 
 protected:
     Object& mObject;

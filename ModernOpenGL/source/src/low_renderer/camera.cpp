@@ -2,6 +2,8 @@
 
 #include "core/input.hpp"
 
+#include <algorithm>
+
 void Camera::Update(const float deltaTime)
 {
     Object::Update(deltaTime);
@@ -93,10 +95,10 @@ void Camera::Update(const float deltaTime)
         );
     }
 
-    transform.rotation.x = std::fmod(
-            transform.rotation.x + std::numbers::pi_v<float> * 2,
-            std::numbers::pi_v<float> * 4
-        ) - std::numbers::pi_v<float> * 2; // Clamp to [-pi, pi]
+    if (transform.rotation.x > std::numbers::pi_v<float> * 2)
+        transform.rotation.x -= std::numbers::pi_v<float> * 4;
+    else if (transform.rotation.x < -std::numbers::pi_v<float> * 2)
+        transform.rotation.x += std::numbers::pi_v<float> * 4;
 
     if (isLookingAt)
     {

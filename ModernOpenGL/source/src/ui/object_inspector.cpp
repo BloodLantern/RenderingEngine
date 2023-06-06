@@ -7,6 +7,10 @@
 #include "core/object.hpp"
 #include "core/input.hpp"
 #include "low_renderer/camera.hpp"
+#include "low_renderer/light.hpp"
+#include "low_renderer/directional_light.hpp"
+#include "low_renderer/point_light.hpp"
+#include "low_renderer/spot_light.hpp"
 
 void ObjectInspector::Show(Scene&)
 {
@@ -24,7 +28,7 @@ void ObjectInspector::Show(Scene&)
 
         ImGui::Text("\tPosition:   ");
         ImGui::SameLine();
-        ImGui::SliderFloat3("##0", &object->transform.position.x, -10, 10);
+        ImGui::SliderFloat3("##0", &object->transform.position.x, -2, 2);
 
         ImGui::Text("\tRotation X: ");
         ImGui::SameLine();
@@ -39,13 +43,6 @@ void ObjectInspector::Show(Scene&)
         ImGui::Text("\tScale:      ");
         ImGui::SameLine();
         ImGui::SliderFloat3("##4", &object->transform.scale.x, -5, 5);
-
-        if (object->mesh)
-        {
-            ImGui::Text("\tMesh offset:");
-            ImGui::SameLine();
-            ImGui::SliderFloat3("##13", &object->mesh->position.x, -10, 10);
-        }
 
         if (Camera* camera = dynamic_cast<Camera*>(object))
         {
@@ -99,7 +96,7 @@ void ObjectInspector::Show(Scene&)
             {
                 ImGui::Text("\tLook at:");
                 ImGui::SameLine();
-                ImGui::SliderFloat3("##10", &camera->lookingAt.x, -10, 10);
+                ImGui::SliderFloat3("##10", &camera->lookingAt.x, -2, 2);
             }
             if (displayForward)
             {
@@ -110,6 +107,75 @@ void ObjectInspector::Show(Scene&)
             ImGui::Text("\tFPS View:");
             ImGui::SameLine();
             ImGui::Checkbox("##11", &camera->fpsView);
+        }
+
+        if (Light* light = dynamic_cast<Light*>(object))
+        {
+            ImGui::Separator();
+            ImGui::Text("Light:");
+
+            ImGui::Text("\tAmbient:    ");
+            ImGui::SameLine();
+            ImGui::SliderFloat3("##15", &light->ambient.x, 0, 1);
+            ImGui::Text("\tDiffuse:    ");
+            ImGui::SameLine();
+            ImGui::SliderFloat3("##16", &light->diffuse.x, 0, 1);
+            ImGui::Text("\tSpecular:   ");
+            ImGui::SameLine();
+            ImGui::SliderFloat3("##17", &light->specular.x, 0, 1);
+
+            if (DirectionalLight* directionalLight = dynamic_cast<DirectionalLight*>(light))
+            {
+                ImGui::Separator();
+                ImGui::Text("Directional light:");
+
+                ImGui::Text("\tDirection:   ");
+                ImGui::SameLine();
+                ImGui::SliderFloat3("##18", &directionalLight->direction.x, -1, 1);
+            }
+
+            else if (PointLight* pointLight = dynamic_cast<PointLight*>(light))
+            {
+                ImGui::Separator();
+                ImGui::Text("Point light:");
+
+                ImGui::Text("\tConstant:    ");
+                ImGui::SameLine();
+                ImGui::SliderFloat("##20", &pointLight->constant, 0, 1);
+                ImGui::Text("\tLinear:      ");
+                ImGui::SameLine();
+                ImGui::SliderFloat("##21", &pointLight->linear, 0, 1);
+                ImGui::Text("\tQuadratic:   ");
+                ImGui::SameLine();
+                ImGui::SliderFloat("##22", &pointLight->quadratic, 0, 1);
+            }
+
+            else if (SpotLight* spotLight = dynamic_cast<SpotLight*>(light))
+            {
+                ImGui::Separator();
+                ImGui::Text("Spot light:");
+
+                ImGui::Text("\tDirection:   ");
+                ImGui::SameLine();
+                ImGui::SliderFloat3("##23", &spotLight->direction.x, -1, 1);
+
+                ImGui::Text("\tConstant:     ");
+                ImGui::SameLine();
+                ImGui::SliderFloat("##24", &spotLight->constant, 0, 1);
+                ImGui::Text("\tLinear:       ");
+                ImGui::SameLine();
+                ImGui::SliderFloat("##25", &spotLight->linear, 0, 1);
+                ImGui::Text("\tQuadratic:    ");
+                ImGui::SameLine();
+                ImGui::SliderFloat("##26", &spotLight->quadratic, 0, 1);
+
+                ImGui::Text("\tCutoff:       ");
+                ImGui::SameLine();
+                ImGui::SliderAngle("##27", &spotLight->cutOff);
+                ImGui::Text("\tOuter cuttoff:");
+                ImGui::SameLine();
+                ImGui::SliderAngle("##28", &spotLight->outerCutOff);
+            }
         }
     }
     ImGui::End();
